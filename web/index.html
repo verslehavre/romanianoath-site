@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6fa">
+  <title>Бесплатный тренажёр для подготовки к румынской присяге</title>
+  <meta name="description" content="Готовитесь к присяге на гражданство Румынии? Изучайте вопросы и ответы на румынском с переводом, тренируйте аудирование и устную речь. Бесплатно, без регистрации.">
+  <link rel="stylesheet" href="styles.css?v=progress-order-27">
+  <script type="module" src="app.js?v=short-answer-ru-19"></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="page-header">
+      <a class="brand" href="./">Romanian <span>Oath Trainer</span></a>
+      <span class="badge">Практика · RO / RU</span>
+    </header>
+    <div class="intro"><h1>Подготовка к румынской присяге</h1><p>Бесплатный онлайн-тренажёр с вопросами и ответами, аудированием и практикой устной речи на румынском языке.</p></div>
+    <p id="load-status" role="status">Загружаем учебные главы…</p>
+    <p id="progress-status" role="status" aria-live="polite" hidden></p>
+    <section id="chapters-screen" hidden aria-labelledby="chapters-title">
+      <h2 id="chapters-title" class="screen-title" tabindex="-1">Выберите главу</h2>
+      <ul id="chapter-list" class="chapter-list" role="list"></ul>
+      <dialog id="restore-dialog" aria-labelledby="restore-title" aria-describedby="backup-preview">
+        <h3 id="restore-title">Восстановить прогресс?</h3>
+        <p id="backup-preview"></p>
+        <div class="backup-actions">
+          <button id="cancel-restore" type="button">Отмена</button>
+          <button id="confirm-restore" type="button" class="primary">Заменить и восстановить</button>
+        </div>
+      </dialog>
+    </section>
+    <section class="preparation-info" aria-labelledby="preparation-title">
+      <h2 id="preparation-title">Как подготовиться к румынской присяге самостоятельно?</h2>
+      <p>При подготовке к присяге на гражданство Румынии важно не только запомнить ответы, но и научиться понимать вопросы на румынском языке и уверенно отвечать на них вслух.</p>
+      <p>Для этого мы создали <strong>Romanian Oath Trainer</strong> — бесплатный онлайн-тренажёр, в котором можно заниматься самостоятельно, шаг за шагом.</p>
+      <h3>Как проходит обучение?</h3>
+      <ol class="learning-steps">
+        <li><strong>Изучение.</strong> Разбирайте вопросы и ответы на румынском языке с переводом и озвучкой.</li>
+        <li><strong>Проверка знаний.</strong> Выбирайте правильные ответы и проверяйте, что удалось запомнить.</li>
+        <li><strong>Аудирование.</strong> Слушайте вопросы без текста перед глазами и учитесь понимать румынскую речь на слух.</li>
+        <li><strong>Говорение.</strong> Отвечайте вслух, сравнивайте свои ответы с образцами и при желании используйте распознавание речи.</li>
+      </ol>
+      <p>Материалы охватывают Конституцию, историю, географию, культуру Румынии и ценности Европейского союза. Вопросы объединены в небольшие блоки по 4–5 карточек, чтобы заниматься было удобно даже понемногу.</p>
+      <p><strong>Тренажёр бесплатный и не требует регистрации.</strong> Ваш прогресс автоматически сохраняется в браузере.</p>
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Частые вопросы</h2>
+        <details>
+          <summary>Какие вопросы могут задать на румынской присяге?</summary>
+          <p>Вопросы могут касаться Румынии, её истории, географии, государственного устройства и культуры. В нашем тренажёре собраны учебные вопросы и ответы по этим темам. Они помогают подготовиться к общению на румынском языке, но не являются точным списком вопросов официальной процедуры.</p>
+        </details>
+        <details>
+          <summary>Как научиться понимать вопросы на румынском языке на слух?</summary>
+          <p>В упражнении «Аудирование» сначала прослушайте вопрос без текстовой подсказки, а затем выберите правильный ответ. Если не удалось разобрать вопрос с первого раза, прослушайте запись ещё раз — столько раз, сколько потребуется.</p>
+        </details>
+        <details>
+          <summary>Как тренировать устные ответы на румынском?</summary>
+          <p>В упражнении «Говорение» вы слушаете вопрос, отвечаете вслух и сравниваете свой ответ с правильным вариантом. При желании можно воспользоваться функцией распознавания речи, чтобы увидеть, как браузер распознал произнесённые вами слова.</p>
+        </details>
+      </section>
+    </section>
+    <aside class="backup-tools" aria-labelledby="backup-heading">
+      <h2 id="backup-heading">Следите за своим прогрессом</h2>
+      <p>Результаты занятий автоматически сохраняются в вашем браузере.</p>
+      <div class="backup-actions">
+        <button id="export-progress" type="button">Сохранить прогресс</button>
+        <button id="import-progress" type="button">Восстановить прогресс</button>
+      </div>
+      <details class="backup-help">
+        <summary>Как сохранить или перенести прогресс?</summary>
+        <p>Вам не нужно регистрироваться, вводить почту или создавать личный кабинет.</p>
+        <p>Чтобы не потерять историю обучения при очистке данных браузера или перенести её на другое устройство, нажмите „Сохранить прогресс“. Вы скачаете небольшой файл с резервной копией результатов.</p>
+        <p>Для восстановления прогресса на этом или другом устройстве нажмите „Восстановить прогресс“ и выберите ранее сохранённый файл.</p>
+      </details>
+      <input id="backup-file" type="file" accept=".json,application/json" hidden>
+      <p id="backup-status" role="status" aria-live="polite"></p>
+    </aside>
+    <section id="stages-screen" hidden aria-labelledby="stages-title">
+      <button id="back-to-blocks" class="screen-back" type="button">← На главную</button>
+      <p id="stages-chapter" class="eyebrow" lang="ro"></p>
+      <h2 id="stages-title" class="screen-title" tabindex="-1"></h2>
+      <p id="block-progress" role="status"></p>
+      <ul id="stage-list" role="list">
+        <li><button id="open-study" type="button"><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Изучение</span><span id="study-progress" class="stage-progress"></span></span><span aria-hidden="true">›</span></button></li>
+        <li><button id="open-choice" type="button" disabled><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Выбери ответ</span><span id="choice-progress" class="stage-progress"></span></span><span id="choice-stage-status" class="stage-status">Материалы готовятся</span></button></li>
+        <li><button id="open-listening" type="button" disabled><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Аудирование</span><span id="listening-progress" class="stage-progress"></span></span><span id="listening-stage-status" class="stage-status">Материалы готовятся</span></button></li>
+        <li><button id="open-speaking" type="button" disabled><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Говорение</span><span id="speaking-progress" class="stage-progress"></span></span><span id="speaking-stage-status" class="stage-status">Материалы готовятся</span></button></li>
+      </ul>
+    </section>
+    <section id="trainer" hidden aria-label="Учебные карточки">
+      <button id="back-to-stages" class="screen-back" type="button">← К этапам обучения</button>
+      <h2 id="study-title" class="screen-title" tabindex="-1"></h2>
+      <p id="choice-storage-status" role="status" hidden></p>
+      <section id="choice-resume" hidden aria-labelledby="choice-resume-title">
+        <h3 id="choice-resume-title" tabindex="-1">Продолжить упражнение?</h3>
+        <button id="continue-choice" type="button" class="primary">Продолжить</button>
+        <button id="restart-choice" type="button">Начать заново</button>
+      </section>
+      <section id="choice-complete" hidden aria-labelledby="choice-complete-title">
+        <h3 id="choice-complete-title" tabindex="-1">Упражнение завершено</h3>
+        <p id="choice-complete-description"></p>
+        <div class="completion-actions">
+          <button id="next-exercise" type="button" class="primary" hidden></button>
+          <button id="retry-choice" type="button">Пройти ещё раз</button>
+          <button id="choice-to-stages" type="button">К этапам обучения</button>
+        </div>
+      </section>
+      <div id="card-progress" class="progress-heading"><span>Учебные карточки</span><span id="position" aria-live="polite"></span></div>
+      <progress id="progress" max="5" value="1" aria-label="Положение в наборе"></progress>
+      <article id="card" class="card" tabindex="-1" aria-labelledby="question">
+        <p id="topic" class="eyebrow" lang="ro"></p>
+        <span class="language-label">ВОПРОС · ROMÂNĂ</span>
+        <section id="listening-controls" hidden aria-labelledby="listening-heading">
+          <h3 id="listening-heading"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 13H3v7h4v-7H4Zm16 0h1v7h-4v-7h3Z"/></svg>Прослушайте вопрос</h3>
+          <div id="listening-actions">
+            <button id="show-listening-question" type="button" aria-expanded="false" aria-controls="question-content">Показать текст</button>
+          </div>
+          <p id="listening-status" role="status" aria-live="polite"></p>
+          <button id="listening-text-fallback" type="button" hidden>Перейти к тексту вопроса и вариантам</button>
+          <div id="listening-question-slot"></div>
+        </section>
+        <div id="standard-question-slot"><div id="question-content">
+        <div class="question-heading">
+          <h2 id="question" lang="ro" class="source-text"></h2>
+          <button type="button" class="audio translation-toggle" data-toggle="question-ru" aria-expanded="false" aria-controls="question-ru" aria-label="Показать перевод вопроса" title="Показать перевод вопроса" aria-describedby="question-ru-tip"><span aria-hidden="true" class="language-icon">A<span>文</span></span><span id="question-ru-tip" class="audio-tooltip" role="tooltip">Показать перевод вопроса</span></button>
+          <button type="button" class="audio" data-speak="question" aria-label="Прослушать вопрос на румынском" aria-describedby="question-audio-tip" title="Прослушать вопрос на румынском"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg><span id="question-play-label" hidden>Прослушать вопрос</span><span id="question-audio-tip" class="audio-tooltip" role="tooltip">Прослушать вопрос на румынском</span></button>
+        </div>
+        
+        <section id="question-ru" class="reveal translation" hidden aria-labelledby="question-ru-label"><h3 id="question-ru-label">Перевод вопроса · Русский</h3><p id="question-ru-text" class="source-text" lang="ru"></p></section>
+        </div></div>
+        <section id="choice-area" hidden aria-label="Выберите ответ">
+          <h3 id="listening-answer-heading" hidden>Выберите правильный ответ</h3>
+          <div id="choice-options"></div>
+          <p id="choice-result" class="sr-only" role="status" aria-live="polite"></p>
+        </section>
+        <section id="speaking-area" hidden aria-label="Устный ответ">
+          <div class="speaking-intro">
+            <p class="speaking-help">Попробуйте сначала ответить на вопрос по-румынски. Можно говорить без записи или воспользоваться микрофоном. Затем проверьте себя.</p>
+            <details id="speaking-help" class="speaking-info">
+              <summary aria-label="Справка о микрофоне и распознавании речи" title="Справка о микрофоне" aria-expanded="false"><span aria-hidden="true">ⓘ</span></summary>
+              <ul>
+                <li>Для распознавания речи потребуется разрешение на микрофон.</li>
+                <li>Браузер может передавать аудио внешнему сервису распознавания.</li>
+                <li>Наше приложение не сохраняет аудио и распознанный текст.</li>
+                <li>Пользоваться микрофоном необязательно.</li>
+              </ul>
+            </details>
+          </div>
+          <div class="speaking-actions">
+            <button id="start-speaking" type="button">Начать говорить</button>
+            <button id="stop-speaking" type="button" disabled>Остановить</button>
+          </div>
+          <p id="speaking-status" role="status" aria-live="polite"></p>
+          <div id="spoken-area" hidden>
+            <div class="section-heading"><h3 id="spoken-label">Вы сказали</h3>
+              <button id="copy-spoken" type="button" aria-label="Копировать распознанный текст" title="Копировать распознанный текст" disabled>⧉</button>
+            </div>
+            <p id="spoken-text" class="source-text" lang="ro" aria-labelledby="spoken-label"></p>
+          </div>
+          <p id="speaking-interim" class="source-text speaking-help" lang="ro" aria-label="Предварительный текст"></p>
+          <p id="copy-status" role="status" aria-live="polite"></p>
+          <button id="show-speaking-answer" type="button" class="primary answer-toggle" aria-expanded="false" aria-controls="speaking-answer">Показать правильный ответ</button>
+          <section id="speaking-answer" class="reveal" hidden aria-labelledby="speaking-answer-label">
+            <div class="section-heading">
+              <h3 id="speaking-answer-label">Правильный ответ</h3>
+              <button type="button" class="audio translation-toggle" data-toggle="speaking-answer-ru" aria-expanded="false" aria-controls="speaking-answer-ru" aria-label="Показать перевод короткого ответа" title="Показать перевод короткого ответа" aria-describedby="speaking-answer-ru-tip"><span aria-hidden="true" class="language-icon">A<span>文</span></span><span id="speaking-answer-ru-tip" class="audio-tooltip" role="tooltip">Показать перевод короткого ответа</span></button>
+            </div>
+            <p id="speaking-answer-text" class="source-text" lang="ro"></p>
+            <section id="speaking-answer-ru" class="reveal translation" hidden aria-labelledby="speaking-answer-ru-label"><h3 id="speaking-answer-ru-label">Перевод короткого ответа · Русский</h3><p id="speaking-answer-ru-text" class="source-text" lang="ru"></p></section>
+          </section>
+        </section>
+        <div class="answer-area">
+          <button type="button" class="primary answer-toggle" data-toggle="answer-ro" aria-expanded="false" aria-controls="answer-ro">Показать ответ</button>
+          <section id="answer-ro" class="reveal" hidden aria-labelledby="answer-ro-label">
+            <div class="section-heading">
+              <h3 id="answer-ro-label">Ответ · Română</h3>
+              <button type="button" class="audio translation-toggle" data-toggle="answer-ru" aria-expanded="false" aria-controls="answer-ru" aria-label="Показать перевод ответа" title="Показать перевод ответа" aria-describedby="answer-ru-tip"><span aria-hidden="true" class="language-icon">A<span>文</span></span><span id="answer-ru-tip" class="audio-tooltip" role="tooltip">Показать перевод ответа</span></button>
+              <button type="button" class="audio" data-speak="source_answer" aria-label="Прослушать ответ на румынском" aria-describedby="answer-audio-tip" title="Прослушать ответ на румынском"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg><span id="answer-audio-tip" class="audio-tooltip" role="tooltip">Прослушать ответ на румынском</span></button>
+            </div>
+            <p id="answer-ro-text" class="source-text answer" lang="ro"></p>
+            
+            <section id="answer-ru" class="reveal translation" hidden aria-labelledby="answer-ru-label"><h3 id="answer-ru-label">Перевод ответа · Русский</h3><p id="answer-ru-text" class="source-text" lang="ru"></p></section>
+          </section>
+        </div>
+        <section class="vocabulary-area" aria-label="Словарь">
+          <button type="button" class="vocabulary-toggle" data-toggle="vocabulary" aria-expanded="false" aria-controls="vocabulary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path d="M12 5C8 3 5 3 2 4v15c3-1 6-1 10 1 4-2 7-2 10-1V4c-3-1-6-1-10 1Zm0 0v15"/></svg><span>Словарь</span></button>
+          <section id="vocabulary" class="reveal" hidden aria-labelledby="vocabulary-label"><h3 id="vocabulary-label">Словарь · Română / Русский</h3><dl id="vocabulary-list"></dl></section>
+        </section>
+        <p id="audio-status" class="audio-status" hidden role="status" aria-live="polite"></p>
+      </article>
+      <nav class="navigation" aria-label="Навигация по карточкам"><button id="previous" type="button">← Назад</button><span>В своём темпе</span><button id="next" type="button" class="primary">Далее →</button></nav>
+    </section>
+    <footer class="page-footer">© 2026 Romanian Oath Trainer<br><a href="about.html">О проекте и контакты</a></footer>
+  </main>
+</body>
+</html>

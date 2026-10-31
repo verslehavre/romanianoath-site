@@ -1,0 +1,452 @@
+[
+  {
+    "card_id": "pdf01_t001_q01",
+    "short_answer_ro": "România este: stat naţional, suveran şi independent, unitar şi indivizibil, stat de drept, democratic şi social.",
+    "wrong_answers_ro": [
+      "România este un stat federal, alcătuit din mai multe state autonome, fiecare având propriile legi.",
+      "România este o monarhie constituţională, în care şeful statului este un rege, iar puterea se moşteneşte."
+    ],
+    "short_answer_ru": "Румыния — национальное, суверенное и независимое, унитарное и неделимое, правовое, демократическое и социальное государство."
+  },
+  {
+    "card_id": "pdf01_t001_q02",
+    "short_answer_ro": "Forma de guvernământ a României este Republica.",
+    "wrong_answers_ro": [
+      "Forma de guvernământ a României este Teocrația.",
+      "Forma de guvernământ a României este monarhia constituțională."
+    ],
+    "short_answer_ru": "Форма правления Румынии — республика."
+  },
+  {
+    "card_id": "pdf01_t001_q03",
+    "short_answer_ro": "În România există trei puteri: legislativă, executivă și judecătorească.",
+    "wrong_answers_ro": [
+      "În România există trei puteri: legislativă, executivă și prezidențială.",
+      "În România există trei puteri: legislativă, administrativă și judecătorească."
+    ],
+    "short_answer_ru": "В Румынии существуют три ветви власти: законодательная, исполнительная и судебная."
+  },
+  {
+    "card_id": "pdf01_t001_q04",
+    "short_answer_ro": "Teritoriul României este organizat în judeţe, oraşe, comune şi sate.",
+    "wrong_answers_ro": [
+      "Teritoriul României este organizat în regiuni, oraşe, comune şi sate.",
+      "Teritoriul României este organizat în judeţe, oraşe, districte şi sate."
+    ],
+    "short_answer_ru": "Территория Румынии организована в уезды, города, коммуны и сёла."
+  },
+  {
+    "card_id": "pdf01_t001_q05",
+    "short_answer_ro": "Teritoriul României este inalienabil și indivizibil.",
+    "wrong_answers_ro": [
+      "Teritoriul României este inalienabil, dar poate fi împărțit.",
+      "Teritoriul României poate fi înstrăinat, dar este indivizibil."
+    ],
+    "short_answer_ru": "Территория Румынии является неотчуждаемой и неделимой."
+  },
+  {
+    "card_id": "pdf01_t001_q06",
+    "short_answer_ro": "Capitala României este municipiul Bucureşti.",
+    "wrong_answers_ro": [
+      "Capitala României este municipiul Iaşi.",
+      "Capitala României este municipiul Cluj-Napoca."
+    ],
+    "short_answer_ru": "Столица Румынии — муниципий Бухарест."
+  },
+  {
+    "card_id": "pdf01_t002_q01",
+    "short_answer_ro": "În România, limba oficială este limba română.",
+    "wrong_answers_ro": [
+      "În România, limba oficială este limba maghiară.",
+      "În România, limba oficială este limba italiană."
+    ],
+    "short_answer_ru": "Официальный язык Румынии — румынский."
+  },
+  {
+    "card_id": "pdf01_t002_q02",
+    "short_answer_ro": "Cetăţenia română se poate dobândi prin naştere, prin adopţie sau la cerere, potrivit legii.",
+    "wrong_answers_ro": [
+      "Cetăţenia română se poate dobândi numai prin naştere sau prin căsătorie.",
+      "Cetăţenia română se poate dobândi doar prin naştere sau prin adopţie, potrivit legii."
+    ],
+    "short_answer_ru": "Румынское гражданство можно получить по рождению, в результате усыновления или по заявлению в соответствии с законом."
+  },
+  {
+    "card_id": "pdf01_t002_q03",
+    "short_answer_ro": "Dreptul la identitate este dreptul minorităţilor naţionale de a-şi păstra tradiţiile, religia, cultura şi de a fi educaţi în limba maternă.",
+    "wrong_answers_ro": [
+      "Dreptul la identitate este dreptul minorităţilor naţionale de a-şi păstra tradiţiile, religia şi cultura, dar de a fi educaţi numai în limba română.",
+      "Dreptul la identitate este dreptul minorităţilor naţionale de a fi educaţi în limba maternă, dar nu de a-şi păstra religia şi tradiţiile."
+    ],
+    "short_answer_ru": "Право на идентичность — это право национальных меньшинств сохранять свои традиции, религию, культуру и получать образование на родном языке."
+  },
+  {
+    "card_id": "pdf01_t002_q04",
+    "short_answer_ro": "Sindicatele sunt organizații ale salariaților, care apără drepturile acestora.",
+    "wrong_answers_ro": [
+      "Sindicatele sunt organizații ale angajatorilor, care apără drepturile acestora.",
+      "Sindicatele sunt organizații ale salariaților, care apără drepturile angajatorilor."
+    ],
+    "short_answer_ru": "Профсоюзы — это организации работников, которые защищают их права."
+  },
+  {
+    "card_id": "pdf01_t002_q05",
+    "short_answer_ro": "Pluralismul politic înseamnă existenţa mai multor partide politice.",
+    "wrong_answers_ro": [
+      "Pluralismul politic înseamnă existenţa unui singur partid politic.",
+      "Pluralismul politic înseamnă existenţa mai multor sindicate."
+    ],
+    "short_answer_ru": "Политический плюрализм означает наличие нескольких политических партий."
+  },
+  {
+    "card_id": "pdf01_t002_q06",
+    "short_answer_ro": "Simbolurile naţionale ale României sunt drapelul, ziua naţională, imnul naţional, stema şi sigiliul.",
+    "wrong_answers_ro": [
+      "Simbolurile naţionale ale României sunt drapelul, ziua naţională, imnul naţional, Constituţia şi sigiliul.",
+      "Simbolurile naţionale ale României sunt drapelul, ziua naţională, Parlamentul, stema şi sigiliul."
+    ],
+    "short_answer_ru": "Национальными символами Румынии являются флаг, Национальный день, государственный гимн, герб и печать."
+  },
+  {
+    "card_id": "pdf01_t003_q01",
+    "short_answer_ro": "Supremaţia Constituţiei înseamnă că aceasta este legea cea mai importantă din stat, iar toate legile şi actele normative trebuie să fie în concordanţă cu ea.",
+    "wrong_answers_ro": [
+      "Supremaţia Constituţiei înseamnă că aceasta este legea cea mai importantă din stat, dar celelalte legi pot conţine prevederi contrare ei.",
+      "Supremaţia Constituţiei înseamnă că doar legile trebuie să fie în concordanţă cu ea, nu şi celelalte acte normative."
+    ],
+    "short_answer_ru": "Верховенство Конституции означает, что она является самым важным законом в государстве, а все законы и нормативные акты должны соответствовать ей."
+  },
+  {
+    "card_id": "pdf01_t003_q02",
+    "short_answer_ro": "Principiul separaţiei puterilor în stat înseamnă că cele trei puteri au responsabilităţi diferite, funcţionează separat şi se controlează reciproc.",
+    "wrong_answers_ro": [
+      "Principiul separaţiei puterilor în stat înseamnă că cele trei puteri au aceleaşi responsabilităţi şi funcţionează împreună.",
+      "Principiul separaţiei puterilor în stat înseamnă că cele trei puteri au responsabilităţi diferite şi funcţionează separat, dar nu se controlează reciproc"
+    ],
+    "short_answer_ru": "Принцип разделения властей в государстве означает, что три ветви власти имеют разные обязанности, действуют раздельно и осуществляют взаимный контроль."
+  },
+  {
+    "card_id": "pdf01_t003_q03",
+    "short_answer_ro": "Patronatele sunt organizaţii ale angajatorilor şi apără drepturile acestora.",
+    "wrong_answers_ro": [
+      "Patronatele sunt organizaţii ale salariaţilor şi apără drepturile acestora.",
+      "Patronatele sunt organizaţii ale angajatorilor şi apără drepturile salariaţilor."
+    ],
+    "short_answer_ru": "Ассоциации работодателей — это организации, объединяющие работодателей и защищающие их права."
+  },
+  {
+    "card_id": "pdf01_t003_q04",
+    "short_answer_ro": "Municipiile sunt considerate cele mai importante oraşe dintr-un judeţ. Unele dintre ele sunt declarate reşedinţe de judeţ.",
+    "wrong_answers_ro": [
+      "Municipiile sunt considerate cele mai importante comune dintr-un judeţ. Unele dintre ele sunt declarate reşedinţe de judeţ.",
+      "Municipiile sunt considerate cele mai importante oraşe dintr-un judeţ. Toate sunt declarate reşedinţe de judeţ."
+    ],
+    "short_answer_ru": "Муниципии считаются самыми важными городами уезда. Некоторые из них объявляются административными центрами уездов."
+  },
+  {
+    "card_id": "pdf01_t003_q05",
+    "short_answer_ro": "Ziua naţională a României se serbează pe 1 decembrie, comemorând Marea Unire din 1918.",
+    "wrong_answers_ro": [
+      "Ziua naţională a României se serbează pe 24 ianuarie, comemorând Marea Unire din 1918.",
+      "Ziua naţională a României se serbează pe 1 decembrie, comemorând Marea Unire din 1859."
+    ],
+    "short_answer_ru": "Национальный день Румынии отмечается 1 декабря в память о Великом объединении 1918 года."
+  },
+  {
+    "card_id": "pdf01_t003_q06",
+    "short_answer_ro": "Imnul naţional al României este „Deşteaptă-te române!”.",
+    "wrong_answers_ro": [
+      "Imnul naţional al României este „Trei culori”.",
+      "Imnul naţional al României este „Hora Unirii”."
+    ],
+    "short_answer_ru": "Государственный гимн Румынии — «Пробудись, румын!»."
+  },
+  {
+    "card_id": "pdf01_t004_q01",
+    "short_answer_ro": "Dreptul la viaţă, dreptul la învăţătură, dreptul la muncă, dreptul de vot şi libertatea de exprimare.",
+    "wrong_answers_ro": [
+      "Fidelitatea faţă de ţară, apărarea ţării şi plata contribuţiilor financiare.",
+      "Apărarea ţării, plata contribuţiilor financiare şi exercitarea cu bună credinţă a drepturilor şi libertăţilor."
+    ],
+    "short_answer_ru": "Право на жизнь, право на образование, право на труд, право голоса и свобода выражения мнения."
+  },
+  {
+    "card_id": "pdf01_t004_q02",
+    "short_answer_ro": "Îndatoririle cetăţeanului român sunt: fidelitatea faţă de ţară, apărarea ţării, plata contribuţiilor financiare şi respectarea drepturilor celorlalţi.",
+    "wrong_answers_ro": [
+      "Îndatoririle cetăţeanului român sunt: fidelitatea faţă de ţară, apărarea ţării, dreptul de vot şi respectarea drepturilor celorlalţi.",
+      "Îndatoririle cetăţeanului român sunt: fidelitatea faţă de ţară, plata contribuţiilor financiare, libertatea de exprimare şi respectarea drepturilor celorlalţi."
+    ],
+    "short_answer_ru": "Обязанности румынского гражданина: верность стране, защита страны, уплата финансовых взносов и соблюдение прав других людей."
+  },
+  {
+    "card_id": "pdf01_t004_q03",
+    "short_answer_ro": "Dreptul la apărare înseamnă că orice persoană are dreptul să fie asistată de un avocat în faţa instanţelor de judecată.",
+    "wrong_answers_ro": [
+      "Dreptul la apărare înseamnă că numai cetăţenii români au dreptul să fie asistaţi de un avocat.",
+      "Dreptul la apărare înseamnă că orice persoană are dreptul să fie asistată de un avocat numai în procesele penale."
+    ],
+    "short_answer_ru": "Право на защиту означает, что каждый человек имеет право на помощь адвоката в суде."
+  },
+  {
+    "card_id": "pdf01_t004_q04",
+    "short_answer_ro": "Cetăţenii români pot vota de la vârsta de 18 ani.",
+    "wrong_answers_ro": [
+      "Cetăţenii români pot vota de la vârsta de 16 ani.",
+      "Cetăţenii români pot vota de la vârsta de 21 ani."
+    ],
+    "short_answer_ru": "Граждане Румынии могут голосовать с 18 лет."
+  },
+  {
+    "card_id": "pdf01_t004_q05",
+    "short_answer_ro": "Prin acces liber la justiţie se înţelege faptul că orice persoană se poate adresa justiţiei pentru apărarea drepturilor, libertăţilor şi a intereselor sale legitime.",
+    "wrong_answers_ro": [
+      "Prin acces liber la justiţie se înţelege faptul că numai cetăţenii români se pot adresa justiţiei pentru apărarea drepturilor lor.",
+      "Prin acces liber la justiţie se înţelege faptul că orice persoană se poate adresa justiţiei numai pentru apărarea intereselor statului."
+    ],
+    "short_answer_ru": "Свободный доступ к правосудию означает, что любой человек может обратиться в суд для защиты своих прав, свобод и законных интересов."
+  },
+  {
+    "card_id": "pdf01_t004_q06",
+    "short_answer_ro": "Inviolabilitatea domiciliului înseamnă că nimeni nu poate intra sau rămâne în locuinţa unei persoane fără acordul ei, cu excepţiile prevăzute de lege.",
+    "wrong_answers_ro": [
+      "Inviolabilitatea domiciliului înseamnă că nimeni nu poate intra în locuinţa unei persoane fără acordul ei, dar poate rămâne acolo.",
+      "Inviolabilitatea domiciliului înseamnă că nimeni nu poate intra în locuinţa unei persoane fără acordul ei, nici pentru executarea unei hotărâri judecătoreşti."
+    ],
+    "short_answer_ru": "Неприкосновенность жилища означает, что никто не может входить или оставаться в жилище человека без его согласия, за исключением случаев, предусмотренных законом."
+  },
+  {
+    "card_id": "pdf01_t005_q01",
+    "short_answer_ro": "Prin universalitatea drepturilor şi libertăţilor se înţelege faptul că toţi cetăţenii României, fără discriminare, au aceleaşi drepturi şi libertăţi.",
+    "wrong_answers_ro": [
+      "Universalitatea drepturilor şi libertăţilor înseamnă că numai cetăţenii care vorbesc limba română au drepturi şi libertăţi.",
+      "Universalitatea drepturilor şi libertăţilor înseamnă că cetăţenii României au drepturi diferite în funcţie de religie."
+    ],
+    "short_answer_ru": "Всеобщность прав и свобод означает, что все граждане Румынии обладают одинаковыми правами и свободами без дискриминации."
+  },
+  {
+    "card_id": "pdf01_t005_q02",
+    "short_answer_ro": "Pentru Camera Deputaţilor – 23 de ani, pentru Senat – 33 de ani, iar pentru Preşedinţie – 35 de ani.",
+    "wrong_answers_ro": [
+      "Pentru Camera Deputaţilor – 23 de ani, pentru Senat – 35 de ani, iar pentru Preşedinţie – 33 de ani.",
+      "Pentru Camera Deputaţilor – 33 de ani, pentru Senat – 23 de ani, iar pentru Preşedinţie – 35 de ani."
+    ],
+    "short_answer_ru": "В Палату депутатов — с 23 лет, в Сенат — с 33 лет, а на пост президента — с 35 лет."
+  },
+  {
+    "card_id": "pdf01_t005_q03",
+    "short_answer_ro": "Cetăţenii străini şi apatrizii care locuiesc în România se bucură de protecţia generală a persoanelor şi a averilor, garantată de Constituţie şi de alte legi.",
+    "wrong_answers_ro": [
+      "Cetăţenii străini şi apatrizii care locuiesc în România se bucură de protecţia persoanelor, dar nu şi a averilor.",
+      "Cetăţenii străini şi apatrizii care locuiesc în România se bucură de protecţia persoanelor şi a averilor, garantată de alte legi, dar nu şi de Constituţie."
+    ],
+    "short_answer_ru": "Иностранные граждане и лица без гражданства, проживающие в Румынии, пользуются защитой личности и имущества, гарантированной законом."
+  },
+  {
+    "card_id": "pdf01_t005_q04",
+    "short_answer_ro": "Prin libertatea conştiinţei se înţelege libertatea gândirii şi a opiniilor, libertatea ideilor proprii precum şi libertatea religiei.",
+    "wrong_answers_ro": [
+      "Prin libertatea conştiinţei se înţelege libertatea gândirii şi a opiniilor, dar nu şi libertatea religiei.",
+      "Prin libertatea conştiinţei se înţelege libertatea religiei, dar nu şi libertatea gândirii şi a opiniilor."
+    ],
+    "short_answer_ru": "Свобода совести означает свободу мысли, мнений, собственных идей и вероисповедания."
+  },
+  {
+    "card_id": "pdf01_t005_q05",
+    "short_answer_ro": "Prin dreptul de petiţionare se înţelege faptul că cetăţenii au dreptul să se adreseze autorităţilor publice prin petiţii scrise, prin scrisori.",
+    "wrong_answers_ro": [
+      "Prin dreptul de petiţionare se înţelege faptul că cetăţenii au dreptul să se adreseze autorităţilor publice numai prin intermediul unui avocat.",
+      "Prin dreptul de petiţionare se înţelege faptul că cetăţenii se pot adresa autorităţilor publice numai prin petiţii semnate de mai multe persoane."
+    ],
+    "short_answer_ru": "Право на подачу петиций означает, что граждане могут обращаться к органам государственной власти с письменными петициями."
+  },
+  {
+    "card_id": "pdf01_t005_q06",
+    "short_answer_ro": "Apatrid este persoana fără cetățenie.",
+    "wrong_answers_ro": [
+      "Apatrid este persoana fără domiciliu.",
+      "Apatrid este persoana cu două cetățenii."
+    ],
+    "short_answer_ru": "Апатрид — это лицо без гражданства."
+  },
+  {
+    "card_id": "pdf01_t006_q01",
+    "short_answer_ro": "Libertatea întrunirilor este dreptul persoanelor de a organiza mitinguri şi demonstraţii paşnice, fără arme.",
+    "wrong_answers_ro": [
+      "Libertatea întrunirilor este dreptul numai al partidelor politice şi sindicatelor de a organiza mitinguri şi demonstraţii paşnice.",
+      "Libertatea întrunirilor este dreptul persoanelor de a organiza mitinguri şi demonstraţii, chiar dacă acestea nu sunt paşnice."
+    ],
+    "short_answer_ru": "Свобода собраний — это право людей организовывать мирные митинги и демонстрации без оружия."
+  },
+  {
+    "card_id": "pdf01_t006_q02",
+    "short_answer_ro": "Dreptul de asociere este dreptul cetăţenilor de a se asocia în partide politice, sindicate şi patronate, respectând principiile statului de drept.",
+    "wrong_answers_ro": [
+      "Dreptul de asociere este dreptul cetăţenilor de a se asocia numai în sindicate şi patronate, nu şi în partide politice.",
+      "Dreptul de asociere este dreptul cetăţenilor de a deveni membri ai partidelor politice, sindicatelor şi patronatelor existente, dar nu de a înfiinţa organizaţii noi."
+    ],
+    "short_answer_ru": "Право на объединение — это право граждан объединяться в политические партии, профсоюзы и ассоциации работодателей, соблюдая принципы правового государства."
+  },
+  {
+    "card_id": "pdf01_t006_q03",
+    "short_answer_ro": "Au dreptul de a fi aleşi în funcţii publice toţi cetăţenii români majori (bărbaţi sau femei) cu domiciliul în ţară.",
+    "wrong_answers_ro": [
+      "Au dreptul de a fi aleşi în funcţii publice cetăţenii români majori cu domiciliul în ţară, numai dacă sunt membri ai unui partid politic.",
+      "Au dreptul de a fi aleşi în funcţii publice toţi cetăţenii români majori, indiferent dacă au domiciliul în România sau în străinătate."
+    ],
+    "short_answer_ru": "Все совершеннолетние граждане Румынии, проживающие в стране, имеют право быть избранными на государственные должности."
+  },
+  {
+    "card_id": "pdf01_t006_q04",
+    "short_answer_ro": "Drepturile şi libertăţile fundamentale pot fi limitate numai dacă acest lucru este prevăzut de lege şi numai în cazuri excepţionale, precum apărarea securităţii naţionale sau a sănătăţii publice.",
+    "wrong_answers_ro": [
+      "Drepturile şi libertăţile fundamentale pot fi limitate în cazuri excepţionale prin decizia Guvernului, chiar dacă limitarea nu este prevăzută de lege.",
+      "Drepturile şi libertăţile fundamentale pot fi limitate numai în caz de război sau de stare de urgenţă, în condiţiile legii."
+    ],
+    "short_answer_ru": "Основные права и свободы могут быть ограничены только в случаях, предусмотренных законом, и лишь при исключительных обстоятельствах, например для защиты национальной безопасности или общественного здоровья."
+  },
+  {
+    "card_id": "pdf01_t006_q05",
+    "short_answer_ro": "Avocatul Poporului este o instituţie a statului care apără drepturile şi libertăţile persoanelor fizice.",
+    "wrong_answers_ro": [
+      "Avocatul Poporului este o instituţie a statului care oferă avocaţi gratuit persoanelor în procesele de judecată.",
+      "Avocatul Poporului este o instituţie a statului care judecă litigiile dintre cetăţeni şi autorităţile publice."
+    ],
+    "short_answer_ru": "Народный адвокат (омбудсмен) — это государственный институт, защищающий права и свободы физических лиц."
+  },
+  {
+    "card_id": "pdf01_t006_q06",
+    "short_answer_ro": "Pierd dreptul de vot numai cei care suferă de boli psihice şi sunt puşi sub interdicţie, precum şi cei care au făcut o faptă penală şi au fost condamnaţi definitiv la pierderea dreptului de a vota şi de a fi ales.",
+    "wrong_answers_ro": [
+      "Dreptul de vot se pierde atunci când un cetăţean român îşi stabileşte domiciliul în străinătate.",
+      "Dreptul de vot se pierde atunci când un cetăţean român nu participă la alegeri timp de mai mulţi ani."
+    ],
+    "short_answer_ru": "Право голоса теряют только лица с психическими заболеваниями, признанные недееспособными, а также лица, осуждённые за преступление с лишением права голосовать и быть избранными."
+  },
+  {
+    "card_id": "pdf01_t007_q01",
+    "short_answer_ro": "Parlamentul este organizat în două Camere: Camera Deputaţilor şi Senatul.",
+    "wrong_answers_ro": [
+      "Parlamentul este organizat într-o singură Cameră: Camera Deputaţilor.",
+      "Parlamentul este organizat în trei Camere: Camera Deputaţilor, Senatul şi Camera Regiunilor."
+    ],
+    "short_answer_ru": "Парламент состоит из двух палат: Палаты депутатов и Сената."
+  },
+  {
+    "card_id": "pdf01_t007_q02",
+    "short_answer_ro": "Parlamentul este ales de cetăţeni prin vot universal, egal, direct și liber exprimat, potrivit legii electorale.",
+    "wrong_answers_ro": [
+      "Parlamentul este ales prin vot indirect, de către reprezentanţii din consiliile locale şi judeţene.",
+      "Parlamentul este ales prin vot direct, dar numai de membrii partidelor politice."
+    ],
+    "short_answer_ru": "Парламент избирается гражданами путём всеобщего, равного, прямого и свободного голосования."
+  },
+  {
+    "card_id": "pdf01_t007_q03",
+    "short_answer_ro": "\tMandatul Parlamentului durează 4 ani.",
+    "wrong_answers_ro": [
+      "Mandatul Parlamentului durează 5 ani.",
+      "Mandatul Parlamentului durează 6 ani."
+    ],
+    "short_answer_ru": "Срок полномочий Парламента составляет 4 года."
+  },
+  {
+    "card_id": "pdf01_t007_q04",
+    "short_answer_ro": "Parlamentul reprezintă poporul român și este unica autoritate legiuitoare a țării — adoptă legi.",
+    "wrong_answers_ro": [
+      "Parlamentul este autoritatea executivă a țării și pune în aplicare legile.",
+      "Parlamentul este autoritatea judecătorească a țării și soluționează litigiile."
+    ],
+    "short_answer_ru": "Парламент представляет румынский народ и является единственным законодательным органом страны — он принимает законы."
+  },
+  {
+    "card_id": "pdf01_t007_q05",
+    "short_answer_ro": "Deputații și senatorii au mandat reprezentativ.",
+    "wrong_answers_ro": [
+      "Deputații și senatorii au mandat imperativ.",
+      "Deputații și senatorii au mandat consultativ."
+    ],
+    "short_answer_ru": "Депутаты и сенаторы имеют представительный мандат."
+  },
+  {
+    "card_id": "pdf01_t007_q06",
+    "short_answer_ro": "Camera Deputaților și Senatul lucrează în două sesiuni ordinare pe an, în ședințe separate și publice.",
+    "wrong_answers_ro": [
+      "Camera Deputaților și Senatul lucrează într-o singură sesiune ordinară pe an, în ședințe separate și publice.",
+      "Camera Deputaților și Senatul lucrează în două sesiuni ordinare pe an, în ședințe comune și publice."
+    ],
+    "short_answer_ru": "Палата депутатов и Сенат работают в течение двух очередных сессий в год, проводя отдельные и открытые заседания."
+  },
+  {
+    "card_id": "pdf01_t008_q01",
+    "short_answer_ro": "La cererea Președintelui României, a biroului permanent al fiecărei Camere sau a cel puțin unei treimi dintre deputați ori senatori.",
+    "wrong_answers_ro": [
+      "La cererea Guvernului, a biroului permanent al fiecărei Camere sau a cel puțin unei treimi dintre deputați ori senatori.",
+      "La cererea Președintelui României, a Guvernului sau a cel puțin unui sfert dintre deputați ori senatori."
+    ],
+    "short_answer_ru": "По требованию Президента Румынии, постоянного бюро каждой палаты или не менее одной трети депутатов либо сенаторов."
+  },
+  {
+    "card_id": "pdf01_t008_q02",
+    "short_answer_ro": "Imunitatea parlamentară îi protejează pe deputați și senatori de răspunderea juridică pentru voturile și opiniile lor politice.",
+    "wrong_answers_ro": [
+      "Imunitatea parlamentară îi protejează pe deputați și senatori de răspunderea juridică pentru toate faptele lor.",
+      "Imunitatea parlamentară le permite deputaților și senatorilor să refuze orice anchetă penală."
+    ],
+    "short_answer_ru": "Парламентский иммунитет защищает депутатов и сенаторов от юридической ответственности за их голосование и политические мнения."
+  },
+  {
+    "card_id": "pdf01_t008_q03",
+    "short_answer_ro": "Parlamentul adoptă trei categorii de legi: constituționale, organice și ordinare.",
+    "wrong_answers_ro": [
+      "Parlamentul adoptă două categorii de legi: organice și ordinare.",
+      "Parlamentul adoptă patru categorii de legi: constituționale, organice, ordinare și speciale."
+    ],
+    "short_answer_ru": "Парламент принимает три категории законов: конституционные, органические и ординарные (обычные)."
+  },
+  {
+    "card_id": "pdf01_t008_q04",
+    "short_answer_ro": "Inițiativa legislativă aparține Guvernului, deputaților și senatorilor, precum și unui număr de cel puțin 100.000 de cetățeni cu drept de vot.",
+    "wrong_answers_ro": [
+      "Inițiativa legislativă aparține numai Guvernului, deputaților și senatorilor.",
+      "Inițiativa legislativă aparține Guvernului, deputaților și senatorilor, precum și unui număr de cel puțin 10.000 de cetățeni cu drept de vot."
+    ],
+    "short_answer_ru": "Законодательная инициатива принадлежит Правительству, депутатам и сенаторам, а также не менее чем 100 000 граждан, имеющих право голоса."
+  },
+  {
+    "card_id": "pdf01_t008_q05",
+    "short_answer_ro": "Legea intră în vigoare la 3 zile de la publicarea în Monitorul Oficial sau la o dată ulterioară prevăzută în textul ei.",
+    "wrong_answers_ro": [
+      "Legea intră în vigoare imediat după adoptarea de către Parlament.",
+      "Legea intră în vigoare la 3 zile de la publicare, chiar dacă textul prevede o dată ulterioară."
+    ],
+    "short_answer_ru": "Закон вступает в силу через 3 дня после публикации в «Официальном вестнике» или в более позднюю дату, предусмотренную в его тексте."
+  },
+  {
+    "card_id": "pdf01_t008_q06",
+    "short_answer_ro": "Consiliul Legislativ este o instituție consultativă a Parlamentului și ține evidența oficială a legilor adoptate.",
+    "wrong_answers_ro": [
+      "Consiliul Legislativ este instituția care adoptă legile și le trimite Parlamentului spre aprobare.",
+      "Consiliul Legislativ este instituția care controlează aplicarea legilor de către instanțele judecătorești."
+    ],
+    "short_answer_ru": "Законодательный совет — это консультативный орган Парламента, который ведёт официальный учёт принятых законов."
+  },
+  {
+    "card_id": "pdf01_t009_q01",
+    "short_answer_ro": "Cetățenie română, domiciliu în țară, drept de vot și de a fi ales, drept de a face parte dintr-un partid politic; minimum 23 de ani pentru deputat și 33 pentru senator.",
+    "wrong_answers_ro": [
+      "Cetățenie română, domiciliu în țară, drept de vot și de a fi ales, drept de a face parte dintr-un partid politic; minimum 18 ani pentru deputat și 23 pentru senator.",
+      "Cetățenie română, domiciliu în țară sau în străinătate, drept de vot și de a fi ales, drept de a face parte dintr-un partid politic; minimum 23 de ani pentru deputat și 33 pentru senator."
+    ],
+    "short_answer_ru": "Румынское гражданство, место жительства в стране, право голосовать и быть избранным, право состоять в политической партии; минимум 23 года для депутата и 33 года для сенатора."
+  },
+  {
+    "card_id": "pdf01_t009_q02",
+    "short_answer_ro": "Nu pot fi deputați și senatori în același timp și nu pot ocupa alte funcții publice, cu excepția celei de membru al Guvernului.",
+    "wrong_answers_ro": [
+      "Pot fi deputați și senatori în același timp, dar nu pot ocupa alte funcții publice, cu excepția celei de membru al Guvernului.",
+      "Nu pot fi deputați și senatori în același timp și nu pot ocupa nicio altă funcție publică, nici măcar cea de membru al Guvernului."
+    ],
+    "short_answer_ru": "Нельзя одновременно быть депутатом и сенатором, а также занимать другие государственные должности, за исключением должности члена Правительства."
+  }
+]
