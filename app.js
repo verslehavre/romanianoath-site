@@ -1241,7 +1241,7 @@ function renderCard(moveFocus = false) {
     byId('card').scrollIntoView({ block: 'start', behavior: 'instant' });
   }
   for (const button of document.querySelectorAll('[data-speak], [data-speech-text]')) updateAudioButton(button, false);
-  playMp3(`audio/${encodeURIComponent(card.id)}_question.mp3`, card.question, true, document.querySelector('[data-speak="question"]'), listeningAudioCallbacks(document.querySelector('[data-speak="question"]')));
+  playMp3(`data/audio/${encodeURIComponent(card.id)}_question.mp3`, card.question, true, document.querySelector('[data-speak="question"]'), listeningAudioCallbacks(document.querySelector('[data-speak="question"]')));
 }
 
 for (const button of toggles) {
@@ -1392,7 +1392,7 @@ byId('card').addEventListener('click', (event) => {
   const part = button.dataset.audioPart
     ?? (button.dataset.speak === 'question' ? 'question' : 'answer');
   const text = button.dataset.speechText ?? card[button.dataset.speak];
-  playMp3(`audio/${encodeURIComponent(card.id)}_${part}.mp3`, text, false, button, listeningAudioCallbacks(button));
+  playMp3(`data/audio/${encodeURIComponent(card.id)}_${part}.mp3`, text, false, button, listeningAudioCallbacks(button));
 });
 window.addEventListener('pagehide', () => { stopRecognition(true); stopSpeech(); });
 
@@ -1406,11 +1406,11 @@ async function initialize() {
   try {
     optionsUnavailable = false;
     const [originals, translations, structure, options] = await Promise.all([
-      loadJson('../data/processed/qa_cards.json'),
-      loadJson('../data/processed/qa_translations.json'),
-      loadJson('../data/processed/learning_blocks.json'),
+      loadJson('./data/processed/qa_cards.json'),
+      loadJson('./data/processed/qa_translations.json'),
+      loadJson('./data/processed/learning_blocks.json'),
       // Review data can change independently of the app; revalidate cached responses.
-      loadJson('../data/processed/qa_answer_options.json', { cache: 'no-cache' })
+      loadJson('./data/processed/qa_answer_options.json', { cache: 'no-cache' })
         .catch(() => { optionsUnavailable = true; return []; }),
     ]);
     availableCards = new Map(joinCards(originals, translations).map((card) => [card.id, card]));
