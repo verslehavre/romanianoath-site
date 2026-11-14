@@ -6,9 +6,13 @@
   <meta name="theme-color" content="#f5f6fa">
   <title>Бесплатный тренажёр для подготовки к румынской присяге</title>
   <meta name="description" content="Готовитесь к присяге на гражданство Румынии? Изучайте вопросы и ответы на румынском с переводом, тренируйте аудирование и устную речь. Бесплатно, без регистрации.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
   <link rel="canonical" href="https://romanianoath.com/">
-  <link rel="stylesheet" href="styles.css?v=progress-order-27">
-  <script type="module" src="app.js?v=short-answer-ru-19"></script>
+  <link rel="stylesheet" href="styles.css?v=greetings-controls-46">
+  <script type="module" src="app.js?v=greetings-play-all-31"></script>
 </head>
 <body>
   <main class="workspace">
@@ -17,6 +21,22 @@
       <span class="badge">Практика · RO / RU</span>
     </header>
     <div class="intro"><h1>Подготовка к румынской присяге</h1><p>Бесплатный онлайн-тренажёр с вопросами и ответами, аудированием и практикой устной речи на румынском языке.</p></div>
+    <nav id="direction-nav" class="direction-nav" aria-label="Направления подготовки"></nav>
+    <section id="direction-screen" hidden aria-labelledby="direction-title">
+      <h2 id="direction-title" class="screen-title" tabindex="-1"></h2>
+      <p class="availability-note">Материалы готовятся</p>
+      <ul id="direction-sections" class="future-sections"></ul>
+    </section>
+    <section id="greetings-screen" hidden aria-labelledby="greetings-title">
+      <div class="section-heading greetings-heading">
+        <h2 id="greetings-title" class="screen-title" tabindex="-1">Приветствия</h2>
+        <div class="greetings-controls">
+          <button id="greetings-play-all" class="audio" type="button" aria-label="Прослушать всё" title="Прослушать всё" disabled><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 5 11 7-11 7Z"/></svg></button>
+          <button id="greetings-translation" class="audio translation-toggle" type="button" aria-expanded="true" aria-controls="greetings-content" aria-label="Скрыть перевод" title="Скрыть перевод"><span aria-hidden="true" class="language-icon">A<span>文</span></span></button>
+        </div>
+      </div>
+      <div id="greetings-content"></div>
+    </section>
     <p id="load-status" role="status">Загружаем учебные главы…</p>
     <p id="progress-status" role="status" aria-live="polite" hidden></p>
     <section id="chapters-screen" hidden aria-labelledby="chapters-title">

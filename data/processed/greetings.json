@@ -1,0 +1,155 @@
+{
+  "blocks": [
+    {
+      "id": "ordinary",
+      "title": "Обычные приветствия",
+      "intro": "На эти приветствия обычно отвечают тем же выражением. Их можно использовать и первыми.",
+      "rows": [
+        {
+          "id": "greetings_01",
+          "ro": "Bună dimineața!",
+          "ru": "Доброе утро!",
+          "usage": "Утром"
+        },
+        {
+          "id": "greetings_02",
+          "ro": "Bună ziua!",
+          "ru": "Добрый день!",
+          "usage": "Днём"
+        },
+        {
+          "id": "greetings_03",
+          "ro": "Bună seara!",
+          "ru": "Добрый вечер!",
+          "usage": "Вечером"
+        }
+      ]
+    },
+    {
+      "id": "address",
+      "title": "Приветствия с обращением",
+      "rows": [
+        {
+          "id": "greetings_address_01",
+          "ro": "Bună ziua, doamnă!",
+          "ru": "Добрый день, госпожа!"
+        },
+        {
+          "id": "greetings_address_02",
+          "ro": "Bună ziua, domnule!",
+          "ru": "Добрый день, господин!"
+        },
+        {
+          "id": "greetings_address_03",
+          "ro": "Bună ziua, tuturor!",
+          "ru": "Добрый день всем!"
+        },
+        {
+          "id": "greetings_address_04",
+          "ro": "Bună ziua, doamnelor și domnilor!",
+          "ru": "Добрый день, дамы и господа!"
+        },
+        {
+          "id": "greetings_address_05",
+          "ro": "Bună ziua, doamnă Popescu!",
+          "ru": "Добрый день, госпожа Попеску!"
+        },
+        {
+          "id": "greetings_address_06",
+          "ro": "Bună ziua, domnule Popescu!",
+          "ru": "Добрый день, господин Попеску!"
+        }
+      ],
+      "notes": [
+        "Обращения к одному человеку или группе можно сочетать с Bună dimineața!, Bună ziua! и Bună seara! в зависимости от времени суток.",
+        "Tuturor — обращение ко всем; doamnelor și domnilor — более торжественное «дамы и господа»."
+      ]
+    },
+    {
+      "id": "responses",
+      "title": "Другие приветствия и ответы",
+      "intro": "Здесь возможный ответ отличается от исходного выражения, поэтому обе реплики показываем рядом.",
+      "rows": [
+        {
+          "id": "greetings_04",
+          "ro": "Bine ați venit!",
+          "ru": "Добро пожаловать!",
+          "answers": [
+            {
+              "id": "greetings_04_reply_01",
+              "ro": "Bine v-am găsit!",
+              "ru": "Рад(а) быть здесь!"
+            },
+            {
+              "id": "greetings_04_reply_02",
+              "ro": "Mulțumesc!",
+              "ru": "Спасибо!"
+            }
+          ]
+        },
+        {
+          "id": "greetings_05",
+          "ro": "Mă bucur să vă văd!",
+          "ru": "Рад(а) вас видеть!",
+          "answers": [
+            {
+              "id": "greetings_05_reply_01",
+              "ro": "Și eu mă bucur!",
+              "ru": "Я тоже рад(а)!"
+            }
+          ],
+          "variants": [
+            {
+              "id": "greetings_05_variant_01",
+              "ro": "Mă bucur să vă văd pe toți!",
+              "ru": "Рад(а) всех вас видеть!"
+            }
+          ]
+        },
+        {
+          "id": "greetings_06",
+          "ro": "Îmi pare bine să vă cunosc!",
+          "ru": "Рад(а) с вами познакомиться!",
+          "answers": [
+            {
+              "id": "greetings_06_reply_01",
+              "ro": "Îmi pare bine și mie!",
+              "ru": "Мне тоже приятно!"
+            }
+          ]
+        },
+        {
+          "id": "greetings_07",
+          "ro": "Îmi pare bine să vă revăd!",
+          "ru": "Рад(а) снова вас видеть!",
+          "answers": [
+            {
+              "id": "greetings_07_reply_01",
+              "ro": "Și mie!",
+              "ru": "Мне тоже!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informal",
+      "title": "Неформальные приветствия",
+      "rows": [
+        {
+          "id": "greetings_08",
+          "ro": "Salut!",
+          "ru": "Привет!"
+        },
+        {
+          "id": "greetings_09",
+          "ro": "Bună!",
+          "ru": "Привет!"
+        }
+      ],
+      "notes": [
+        "Используются в неформальном общении. При обращении к сотрудникам государственных учреждений предпочтительнее вежливые приветствия."
+      ]
+    }
+  ]
+}

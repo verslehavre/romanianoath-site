@@ -53,11 +53,402 @@ export function joinCards(originals, translations) {
   });
 }
 
+// Stable navigation IDs and availability are independent of exam material readiness.
+const directions = [
+  { id: 'exam', title: 'Экзаменационные знания', status: 'available', route: 'chapters' },
+  { id: 'communication', title: 'Общение на присяге', status: 'preparing', sections: [
+    { id: 'polite-communication', title: 'Вежливое общение', status: 'preparing', topics: [
+      { id: 'greetings', title: 'Приветствия', status: 'available' },
+    ] },
+    { id: 'instructions', title: 'Инструкции', status: 'preparing' },
+    { id: 'documents', title: 'Документы', status: 'preparing' },
+    { id: 'waiting-and-moving', title: 'Ожидание и перемещение', status: 'preparing' },
+    { id: 'clarification', title: 'Если не поняли', status: 'preparing' },
+    { id: 'oath-ceremony', title: 'Церемония присяги', status: 'preparing' },
+  ] },
+  { id: 'interview', title: 'Персональное собеседование', status: 'preparing', sections: [
+    { id: 'about-me', title: 'О себе', status: 'preparing' },
+    { id: 'family', title: 'Семья', status: 'preparing' },
+    { id: 'work-and-education', title: 'Работа и образование', status: 'preparing' },
+    { id: 'romanian-language', title: 'Румынский язык', status: 'preparing' },
+    { id: 'romania-and-travel', title: 'Румыния и поездки', status: 'preparing' },
+    { id: 'romanian-roots', title: 'Румынские корни', status: 'preparing' },
+    { id: 'citizenship-and-oath', title: 'Гражданство и присяга', status: 'preparing' },
+  ] },
+];
+
+// Communication visits are independent of exam results and backup/restore.
+const communicationVisitsKey = 'romanian-oath-communication-visits';
+let communicationVisits = {};
+let communicationVisitsRaw;
+let communicationRoute = null;
+let communicationOpening = 0;
+let recordedCommunicationOpening = -1;
+
+function availableCommunicationTopics() {
+  const collect = sections => sections.flatMap(section => section.topics
+    ? collect(section.topics) : section.status === 'available' ? [section.id] : []);
+  return collect(directions.find(direction => direction.id === 'communication').sections);
+}
+function readCommunicationVisits() {
+  try {
+    const raw = localStorage.getItem(communicationVisitsKey);
+    if (raw === communicationVisitsRaw) return communicationVisits;
+    communicationVisitsRaw = raw;
+    if (raw === null) { communicationVisits = {}; return communicationVisits; }
+    const saved = JSON.parse(raw);
+    const visits = {};
+    if (saved?.version !== 1 || !saved.topics || typeof saved.topics !== 'object') return communicationVisits;
+    for (const id of availableCommunicationTopics()) {
+      const entry = saved.topics[id];
+      const validDate = value => typeof value === 'string' && Number.isFinite(Date.parse(value))
+        && new Date(value).toISOString() === value;
+      if (entry && validDate(entry.firstOpenedAt) && validDate(entry.lastOpenedAt)
+          && entry.firstOpenedAt <= entry.lastOpenedAt
+          && Number.isSafeInteger(entry.openCount) && entry.openCount > 0) {
+        visits[id] = { firstOpenedAt: entry.firstOpenedAt, lastOpenedAt: entry.lastOpenedAt, openCount: entry.openCount };
+      }
+    }
+    communicationVisits = visits;
+  } catch { /* Keep visits available in memory if browser storage is unavailable. */ }
+  return communicationVisits;
+}
+function recordCommunicationVisit(id) {
+  if (!availableCommunicationTopics().includes(id) || recordedCommunicationOpening === communicationOpening) return;
+  recordedCommunicationOpening = communicationOpening;
+  const visits = readCommunicationVisits();
+  const previous = visits[id];
+  const now = new Date().toISOString();
+  visits[id] = { firstOpenedAt: previous?.firstOpenedAt || now, lastOpenedAt: now,
+    openCount: Math.min((previous?.openCount || 0) + 1, Number.MAX_SAFE_INTEGER) };
+  try {
+    const raw = JSON.stringify({ version: 1, topics: visits });
+    localStorage.setItem(communicationVisitsKey, raw);
+    communicationVisitsRaw = raw;
+  }
+  catch { /* The topic and its visit marker remain usable for this session. */ }
+}
+export function communicationVisitProgress() {
+  const available = availableCommunicationTopics();
+  const visits = readCommunicationVisits();
+  return { visited: available.filter(id => visits[id]).length, available: available.length };
+}
+
+function createLock() {
+  const lock = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  for (const [key, value] of Object.entries({ class: 'block-lock', viewBox: '0 0 24 24',
+    fill: 'none', stroke: 'currentColor', 'stroke-width': '1.8',
+    'stroke-linecap': 'round', 'stroke-linejoin': 'round', focusable: 'false', 'aria-hidden': 'true' })) {
+    lock.setAttribute(key, value);
+  }
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M8 10V7a4 4 0 0 1 8 0v3M5 10h14v11H5zM12 14v3');
+  lock.append(path);
+  return lock;
+}
+
+function renderDirectionNav(activeId) {
+  const nav = byId('direction-nav');
+  nav.replaceChildren();
+  for (const direction of directions) {
+    const link = document.createElement('a');
+    link.href = `#${direction.route || `direction/${direction.id}`}`;
+    link.textContent = direction.title;
+    if (direction.id === activeId) link.setAttribute('aria-current', 'page');
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      navigate(direction.route || `direction/${direction.id}`);
+    });
+    nav.append(link);
+  }
+}
+
+function renderDirection(direction) {
+  renderDirectionNav(direction.id);
+  byId('direction-title').textContent = direction.title;
+  const list = byId('direction-sections');
+  list.replaceChildren();
+  function appendSection(section, target) {
+    const item = document.createElement('li');
+    item.dataset.sectionId = section.id;
+    if (section.topics) {
+      const heading = document.createElement('h3');
+      heading.className = 'future-group-title';
+      heading.textContent = section.title;
+      item.append(heading);
+      const topics = document.createElement('ul');
+      for (const topic of section.topics) appendSection(topic, topics);
+      item.append(topics);
+    } else {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.disabled = section.status !== 'available';
+      const title = document.createElement('span');
+      title.textContent = section.title;
+      button.append(title);
+      if (button.disabled) button.append(createLock());
+      else {
+        button.addEventListener('click', () => navigate(`direction/${direction.id}/polite-communication/${section.id}`));
+        if (direction.id === 'communication' && readCommunicationVisits()[section.id]) {
+          const check = document.createElement('span');
+          check.className = 'block-complete topic-visited';
+          check.textContent = '✓';
+          check.setAttribute('role', 'img');
+          check.setAttribute('aria-label', 'Подтема посещена');
+          button.append(check);
+        }
+      }
+      item.append(button);
+    }
+    target.append(item);
+  }
+  for (const section of direction.sections) appendSection(section, list);
+  showScreen('direction-screen', initialRender ? null : 'direction-title');
+}
+
+let greetingsData = null;
+const greetingsRoute = 'direction/communication/polite-communication/greetings';
+// The playlist owns scheduling; currentAudio remains the shared MP3 player.
+let greetingsSequence = null;
+function updateGreetingsSequenceButton() {
+  const button = byId('greetings-play-all');
+  const label = !greetingsSequence ? 'Прослушать всё' : greetingsSequence.paused ? 'Продолжить' : 'Пауза';
+  button.setAttribute('aria-label', label);
+  button.title = label;
+  button.querySelector('svg').innerHTML = greetingsSequence && !greetingsSequence.paused
+    ? '<path d="M8 5v14M16 5v14"/>' : '<path d="m8 5 11 7-11 7Z"/>';
+}
+function resetGreetingsSequence() {
+  if (greetingsSequence) clearTimeout(greetingsSequence.timer);
+  greetingsSequence = null;
+  updateGreetingsSequenceButton();
+}
+function greetingsSequenceError(sequence, button) {
+  if (greetingsSequence !== sequence) return;
+  stopSpeech();
+  const error = button.closest('[data-phrase-id]').querySelector('.greeting-audio-error');
+  error.textContent = 'Не удалось воспроизвести запись. Проверьте соединение и попробуйте ещё раз.';
+  error.hidden = false;
+}
+function scheduleGreeting(sequence) {
+  clearTimeout(sequence.timer);
+  sequence.timer = setTimeout(() => {
+    if (greetingsSequence !== sequence || sequence.paused) return;
+    sequence.waiting = false;
+    playGreeting(sequence);
+  }, 1000);
+}
+function playGreeting(sequence) {
+  if (greetingsSequence !== sequence || sequence.paused) return;
+  const button = sequence.buttons[sequence.index];
+  button.closest('[data-phrase-id]').querySelector('.greeting-audio-error').hidden = true;
+  playMp3(button.dataset.audioSrc, button.dataset.speechText, false, button, {
+    sequence,
+    unavailable: () => greetingsSequenceError(sequence, button),
+    ended: () => {
+      if (greetingsSequence !== sequence) return;
+      sequence.index += 1;
+      if (sequence.index === sequence.buttons.length) { resetGreetingsSequence(); return; }
+      sequence.waiting = true;
+      if (!sequence.paused) scheduleGreeting(sequence);
+    },
+  });
+}
+byId('greetings-play-all').addEventListener('click', () => {
+  let sequence = greetingsSequence;
+  if (!sequence) {
+    stopSpeech();
+    const buttons = [...byId('greetings-content').querySelectorAll('[data-speech-text]')];
+    if (!buttons.length) return;
+    sequence = { buttons, index: 0, paused: false, waiting: false, timer: null };
+    greetingsSequence = sequence;
+    playGreeting(sequence);
+  } else if (!sequence.paused) {
+    sequence.paused = true;
+    clearTimeout(sequence.timer);
+    currentAudio?.pause();
+    updateAudioButton(sequence.buttons[sequence.index], false);
+  } else {
+    sequence.paused = false;
+    if (sequence.waiting) scheduleGreeting(sequence);
+    else if (currentAudio) {
+      const audio = currentAudio;
+      audio.play().then(() => {
+        if (greetingsSequence === sequence && !sequence.paused && currentAudio === audio) {
+          activeAudioButton = sequence.buttons[sequence.index];
+          updateAudioButton(activeAudioButton, true);
+        }
+      }).catch(error => {
+        if (error.name !== 'AbortError' && greetingsSequence === sequence && currentAudio === audio && !sequence.paused) {
+          greetingsSequenceError(sequence, sequence.buttons[sequence.index]);
+        }
+      });
+    }
+  }
+  updateGreetingsSequenceButton();
+});
+
+function updateGreetingsTranslation(visible) {
+  const button = byId('greetings-translation');
+  const label = visible ? 'Скрыть перевод' : 'Показать перевод';
+  button.setAttribute('aria-expanded', String(visible));
+  button.setAttribute('aria-label', label);
+  button.title = label;
+}
+byId('greetings-translation').addEventListener('click', () => {
+  const hidden = byId('greetings-screen').classList.toggle('translations-hidden');
+  updateGreetingsTranslation(!hidden);
+});
+byId('greetings-content').addEventListener('click', (event) => {
+  const button = event.target.closest('[data-speech-text]');
+  if (!button || button.disabled) return;
+  if (greetingsSequence) stopSpeech();
+  if (button === activeAudioButton) { stopSpeech(); return; }
+  const error = button.closest('[data-phrase-id]').querySelector('.greeting-audio-error');
+  error.hidden = true;
+  const showError = () => {
+    error.textContent = 'Не удалось загрузить или воспроизвести запись. Проверьте соединение и попробуйте ещё раз.';
+    error.hidden = false;
+  };
+  playMp3(button.dataset.audioSrc, button.dataset.speechText, false, button, {
+    unavailable: showError, mp3Error: showError,
+  });
+});
+
+async function renderGreetings() {
+  const opening = communicationOpening;
+  renderDirectionNav('communication');
+  showScreen('greetings-screen', initialRender ? null : 'greetings-title');
+  byId('greetings-screen').classList.remove('translations-hidden');
+  updateGreetingsTranslation(true);
+  const content = byId('greetings-content');
+  byId('greetings-play-all').disabled = true;
+  content.textContent = 'Загружаем приветствия…';
+  try {
+    greetingsData ??= await loadJson('./data/processed/greetings.json');
+    // Loading must not reopen the topic after the user leaves it.
+    if (location.hash !== `#${greetingsRoute}` || opening !== communicationOpening) return;
+    content.replaceChildren();
+    function cell(row, text, tag = 'td') {
+      const node = document.createElement(tag);
+      node.textContent = text;
+      if (tag === 'th') node.scope = 'col';
+      row.append(node);
+      return node;
+    }
+    function phraseRow(parent, phrase, table = true) {
+      const row = table ? parent.insertRow() : document.createElement('div');
+      row.dataset.phraseId = phrase.id;
+      if (!table) { row.className = 'greeting-phrase'; parent.append(row); }
+      const ro = table ? cell(row, '') : document.createElement('div');
+      ro.lang = 'ro';
+      const text = document.createElement('span');
+      text.textContent = phrase.ro;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'audio greeting-audio';
+      button.dataset.speechText = phrase.ro;
+      button.dataset.audioSrc = `data/audio/${encodeURIComponent(phrase.id)}.mp3`;
+      button.append(document.querySelector('[data-speak="question"] svg').cloneNode(true));
+      updateAudioButton(button, false);
+      const line = document.createElement('div');
+      line.className = 'greeting-expression';
+      const control = document.createElement('span');
+      control.className = 'greeting-audio-control';
+      control.setAttribute('role', 'group');
+      control.append(button);
+      line.append(text, control);
+      const error = document.createElement('span');
+      error.className = 'greeting-audio-error';
+      error.setAttribute('role', 'status');
+      error.hidden = true;
+      ro.append(line, error);
+      const ru = table ? cell(row, phrase.ru) : document.createElement('div');
+      ru.lang = 'ru';
+      if (!table) { ru.textContent = phrase.ru; row.append(ro, ru); }
+    }
+    for (const block of greetingsData.blocks) {
+      const section = document.createElement('section');
+      section.className = 'greetings-block conversation-section';
+      const heading = document.createElement('h3');
+      heading.id = `greetings-${block.id}`;
+      heading.textContent = block.title;
+      section.setAttribute('aria-labelledby', heading.id);
+      section.append(heading);
+      if (block.id === 'responses') {
+        const table = document.createElement('table');
+        table.className = 'greetings-dialogue-table';
+        const headers = table.createTHead().insertRow();
+        headers.className = 'greeting-side-headings';
+        for (const title of ['Нам говорят', 'Мы отвечаем']) {
+          const header = cell(headers, title, 'th');
+          header.colSpan = 2;
+          header.scope = 'colgroup';
+        }
+        const languages = table.tHead.insertRow();
+        languages.className = 'greeting-language-headings';
+        for (let pair = 0; pair < 2; pair++) {
+          cell(languages, 'Română', 'th');
+          cell(languages, 'Русский', 'th').dataset.translation = '';
+        }
+        const body = table.createTBody();
+        for (const phrase of block.rows) {
+          const situation = body.insertRow();
+          situation.dataset.groupId = phrase.id;
+          for (const [label, expressions] of [
+            ['Нам говорят', [phrase, ...(phrase.variants || [])]],
+            ['Мы отвечаем', phrase.answers || []],
+          ]) {
+            const side = cell(situation, '');
+            side.dataset.side = label;
+            side.colSpan = 2;
+            for (const expression of expressions) phraseRow(side, expression, false);
+          }
+        }
+        section.append(table);
+      } else {
+        const table = document.createElement('table');
+        if (block.id === 'address') table.className = 'greetings-address-table';
+        const headers = table.createTHead().insertRow();
+        cell(headers, 'Română', 'th');
+        cell(headers, 'Русский', 'th').dataset.translation = '';
+        for (const phrase of block.rows) phraseRow(table.createTBody(), phrase);
+        section.append(table);
+      }
+      const notes = block.id === 'ordinary'
+        ? ['На эти приветствия обычно отвечают тем же выражением.']
+        : ['address', 'informal'].includes(block.id) ? block.notes || [] : [];
+      if (notes.length) {
+        const details = document.createElement('details');
+        details.className = 'greetings-notes conversation-details';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Подробнее';
+        details.append(summary);
+        const panel = document.createElement('div');
+        panel.className = 'greetings-note-panel details-content';
+        for (const note of notes) {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = note;
+          panel.append(paragraph);
+        }
+        details.append(panel);
+        section.append(details);
+      }
+      content.append(section);
+    }
+    byId('greetings-play-all').disabled = false;
+    recordCommunicationVisit('greetings');
+  } catch {
+    if (location.hash !== `#${greetingsRoute}` || opening !== communicationOpening) return;
+    content.textContent = 'Не удалось загрузить приветствия. Проверьте соединение и откройте подтему ещё раз.';
+  }
+}
+
 function showScreen(screenId, headingId) {
   stopRecognition(true);
   stopSpeech();
   setAudioStatus();
-  for (const id of ['chapters-screen', 'stages-screen', 'trainer']) {
+  for (const id of ['chapters-screen', 'stages-screen', 'trainer', 'direction-screen', 'greetings-screen']) {
     byId(id).hidden = id !== screenId;
   }
   if (headingId) byId(headingId).focus();
@@ -874,20 +1265,7 @@ function renderBlockList(chapter, list) {
     }
     item.append(button);
     if (button.disabled) {
-      const lock = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      lock.setAttribute('class', 'block-lock');
-      lock.setAttribute('viewBox', '0 0 24 24');
-      lock.setAttribute('fill', 'none');
-      lock.setAttribute('stroke', 'currentColor');
-      lock.setAttribute('stroke-width', '1.8');
-      lock.setAttribute('stroke-linecap', 'round');
-      lock.setAttribute('stroke-linejoin', 'round');
-      lock.setAttribute('focusable', 'false');
-      lock.setAttribute('aria-hidden', 'true');
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', 'M8 10V7a4 4 0 0 1 8 0v3M5 10h14v11H5zM12 14v3');
-      lock.append(path);
-      button.append(lock);
+      button.append(createLock());
       const status = document.createElement('small');
       status.className = 'block-availability';
       status.textContent = 'Материалы готовятся';
@@ -967,8 +1345,29 @@ function navigate(route, replace = false) {
 }
 
 function renderRoute() {
+  if (communicationRoute !== location.hash) {
+    communicationRoute = location.hash;
+    communicationOpening += 1;
+  }
   if (byId('restore-dialog').open) cancelRestore();
   stopRecognition(true);
+  const routeParts = location.hash.slice(1).split('/');
+  if (routeParts[0] === 'direction') {
+    const direction = directions.find(entry => entry.id === routeParts[1] && entry.sections);
+    if (direction) {
+      if (direction.id === 'communication' && routeParts.length === 4
+          && routeParts[2] === 'polite-communication' && routeParts[3] === 'greetings'
+          && direction.sections[0].topics[0].status === 'available') {
+        renderGreetings();
+        return;
+      }
+      // Unprepared sections have no content route, including direct URLs.
+      if (routeParts.length !== 2) { navigate(`direction/${direction.id}`, true); return; }
+      renderDirection(direction);
+      return;
+    }
+  }
+  renderDirectionNav('exam');
   if (!chapters.length) return;
   loadProgress();
   const [screen, chapterId, blockId, extra] = location.hash.slice(1).split('/');
@@ -1066,12 +1465,14 @@ function updateAudioButton(button, playing) {
   const label = `${playing ? 'Остановить' : 'Воспроизвести'} ${context}`;
   button.setAttribute('aria-label', label);
   button.setAttribute('aria-pressed', String(playing));
-  button.title = label;
+  if (button.classList.contains('greeting-audio')) button.removeAttribute('title');
+  else button.title = label;
   if (button.dataset.speak === 'question' && (mode === 'listening' || mode === 'speaking')) {
     if (playing) button.dataset.listened = 'true';
     byId('question-play-label').textContent = playing ? 'Остановить' : button.dataset.listened === 'true' ? 'Прослушать ещё раз' : 'Прослушать вопрос';
   }
-  button.querySelector('[role="tooltip"]').textContent = label;
+  const tooltip = button.querySelector('[role="tooltip"]');
+  if (tooltip) tooltip.textContent = label;
   const svg = button.querySelector('svg');
   svg.dataset.icon = playing ? 'volume-x' : 'volume-2';
   const speaker = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -1081,7 +1482,8 @@ function updateAudioButton(button, playing) {
   svg.replaceChildren(speaker, sound);
 }
 
-function stopSpeech() {
+function stopSpeech(preserveGreetings = false) {
+  if (!preserveGreetings) resetGreetingsSequence();
   speechGeneration += 1;
   updateAudioButton(activeAudioButton, false);
   activeAudioButton = null;
@@ -1328,7 +1730,7 @@ function speakRomanian(text, button = null, callbacks = {}) {
 }
 
 async function playMp3(path, text, automatic = false, button = null, callbacks = {}) {
-  stopSpeech();
+  stopSpeech(Boolean(callbacks.sequence && callbacks.sequence === greetingsSequence));
   setAudioStatus();
   const generation = speechGeneration;
   const audio = new Audio(path);
@@ -1338,7 +1740,12 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
   const showError = () => {
     if (generation !== speechGeneration || failed) return;
     failed = true;
+    callbacks.mp3Error?.();
     const message = `Не удалось загрузить или воспроизвести MP3 (${path}).`;
+    if (callbacks.sequence) {
+      callbacks.unavailable?.();
+      return;
+    }
     if (speechSupported && romanianVoice()) {
       speakRomanian(text, button, callbacks);
       setAudioStatus(`${message} Используется встроенная румынская озвучка.`);
@@ -1349,7 +1756,7 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
     }
   };
   const showPlaying = () => {
-    if (generation !== speechGeneration || failed) return;
+    if (generation !== speechGeneration || failed || callbacks.sequence?.paused) return;
     activeAudioButton = button;
     updateAudioButton(button, true);
   };
@@ -1360,7 +1767,10 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
     activeAudioButton = null;
   });
   audio.addEventListener('ended', () => {
-    if (generation === speechGeneration && !failed) { stopSpeech(); callbacks.ended?.(); }
+    if (generation === speechGeneration && !failed) {
+      stopSpeech(Boolean(callbacks.sequence && callbacks.sequence === greetingsSequence));
+      callbacks.ended?.();
+    }
   });
   audio.addEventListener('stalled', () => {
     if (generation === speechGeneration && !failed) callbacks.unavailable?.();
@@ -1370,6 +1780,7 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
     await audio.play();
     showPlaying();
   } catch (error) {
+    if (callbacks.sequence && error.name === 'AbortError') return;
     if (automatic && error.name === 'NotAllowedError') {
       failed = true;
       if (generation === speechGeneration) { stopSpeech(); callbacks.blocked?.(); }
