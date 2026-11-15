@@ -208,7 +208,7 @@ function renderDirection(direction) {
 
 let greetingsData = null;
 const greetingsRoute = 'direction/communication/polite-communication/greetings';
-// The playlist owns scheduling; currentAudio remains the shared MP3 player.
+// Bulk playback uses the same MP3 player as individual recordings.
 let greetingsSequence = null;
 function updateGreetingsSequenceButton() {
   const button = byId('greetings-play-all');
@@ -219,71 +219,45 @@ function updateGreetingsSequenceButton() {
     ? '<path d="M8 5v14M16 5v14"/>' : '<path d="m8 5 11 7-11 7Z"/>';
 }
 function resetGreetingsSequence() {
-  if (greetingsSequence) clearTimeout(greetingsSequence.timer);
   greetingsSequence = null;
   updateGreetingsSequenceButton();
 }
-function greetingsSequenceError(sequence, button) {
+function greetingsSequenceError(sequence, failure) {
   if (greetingsSequence !== sequence) return;
   stopSpeech();
-  const error = button.closest('[data-phrase-id]').querySelector('.greeting-audio-error');
-  error.textContent = 'Не удалось воспроизвести запись. Проверьте соединение и попробуйте ещё раз.';
+  const error = byId('greetings-content').querySelector('.greeting-audio-error');
+  error.textContent = failure?.name === 'NotAllowedError'
+    ? 'Браузер запретил воспроизведение. Нажмите «Прослушать всё» ещё раз.'
+    : failure?.code === 3 || failure?.code === 4
+      ? 'Не удалось декодировать запись или формат не поддерживается браузером.'
+      : 'Не удалось загрузить или воспроизвести запись. Проверьте соединение и попробуйте ещё раз.';
   error.hidden = false;
-}
-function scheduleGreeting(sequence) {
-  clearTimeout(sequence.timer);
-  sequence.timer = setTimeout(() => {
-    if (greetingsSequence !== sequence || sequence.paused) return;
-    sequence.waiting = false;
-    playGreeting(sequence);
-  }, 1000);
-}
-function playGreeting(sequence) {
-  if (greetingsSequence !== sequence || sequence.paused) return;
-  const button = sequence.buttons[sequence.index];
-  button.closest('[data-phrase-id]').querySelector('.greeting-audio-error').hidden = true;
-  playMp3(button.dataset.audioSrc, button.dataset.speechText, false, button, {
-    sequence,
-    unavailable: () => greetingsSequenceError(sequence, button),
-    ended: () => {
-      if (greetingsSequence !== sequence) return;
-      sequence.index += 1;
-      if (sequence.index === sequence.buttons.length) { resetGreetingsSequence(); return; }
-      sequence.waiting = true;
-      if (!sequence.paused) scheduleGreeting(sequence);
-    },
-  });
 }
 byId('greetings-play-all').addEventListener('click', () => {
   let sequence = greetingsSequence;
   if (!sequence) {
     stopSpeech();
-    const buttons = [...byId('greetings-content').querySelectorAll('[data-speech-text]')];
-    if (!buttons.length) return;
-    sequence = { buttons, index: 0, paused: false, waiting: false, timer: null };
+    const error = byId('greetings-content').querySelector('.greeting-audio-error');
+    if (!error) return;
+    error.hidden = true;
+    sequence = { paused: false };
     greetingsSequence = sequence;
-    playGreeting(sequence);
+    playMp3(`data/audio/greetings_all.mp3`, '', false, null, {
+      sequence,
+      unavailable: failure => greetingsSequenceError(sequence, failure),
+      ended: resetGreetingsSequence,
+    });
   } else if (!sequence.paused) {
     sequence.paused = true;
-    clearTimeout(sequence.timer);
     currentAudio?.pause();
-    updateAudioButton(sequence.buttons[sequence.index], false);
-  } else {
+  } else if (currentAudio) {
     sequence.paused = false;
-    if (sequence.waiting) scheduleGreeting(sequence);
-    else if (currentAudio) {
-      const audio = currentAudio;
-      audio.play().then(() => {
-        if (greetingsSequence === sequence && !sequence.paused && currentAudio === audio) {
-          activeAudioButton = sequence.buttons[sequence.index];
-          updateAudioButton(activeAudioButton, true);
-        }
-      }).catch(error => {
-        if (error.name !== 'AbortError' && greetingsSequence === sequence && currentAudio === audio && !sequence.paused) {
-          greetingsSequenceError(sequence, sequence.buttons[sequence.index]);
-        }
-      });
-    }
+    const audio = currentAudio;
+    audio.play().catch(error => {
+      if (error.name !== 'AbortError' && greetingsSequence === sequence && currentAudio === audio && !sequence.paused) {
+        greetingsSequenceError(sequence, error);
+      }
+    });
   }
   updateGreetingsSequenceButton();
 });
@@ -1737,13 +1711,13 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
   currentAudio = audio;
   activeAudioButton = button;
   let failed = false;
-  const showError = () => {
+  const showError = (failure) => {
     if (generation !== speechGeneration || failed) return;
     failed = true;
     callbacks.mp3Error?.();
     const message = `Не удалось загрузить или воспроизвести MP3 (${path}).`;
     if (callbacks.sequence) {
-      callbacks.unavailable?.();
+      callbacks.unavailable?.(audio.error || failure);
       return;
     }
     if (speechSupported && romanianVoice()) {
@@ -1773,7 +1747,7 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
     }
   });
   audio.addEventListener('stalled', () => {
-    if (generation === speechGeneration && !failed) callbacks.unavailable?.();
+    if (generation === speechGeneration && !failed && !callbacks.sequence) callbacks.unavailable?.();
   });
   audio.addEventListener('error', showError);
   try {
@@ -1786,7 +1760,7 @@ async function playMp3(path, text, automatic = false, button = null, callbacks =
       if (generation === speechGeneration) { stopSpeech(); callbacks.blocked?.(); }
       return;
     }
-    showError();
+    showError(error);
   }
 }
 
