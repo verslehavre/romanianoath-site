@@ -221,6 +221,7 @@ function updateGreetingsSequenceButton() {
     ? '<path d="M8 5v14M16 5v14"/>' : '<path d="m8 5 11 7-11 7Z"/>';
 }
 function resetGreetingsSequence() {
+  if (greetingsSequence?.seeking) byId('greetings-play-all').disabled = false;
   if (greetingsSequence) URL.revokeObjectURL(greetingsSequence.url);
   greetingsSequence = null;
   updateGreetingsSequenceButton();
@@ -255,19 +256,37 @@ byId('greetings-play-all').addEventListener('click', () => {
     const audio = currentAudio;
     audio.pause();
     // The first phrase whose end is still ahead also covers the gap before it.
-    sequence.resumeAt = greetingsTimings.find(([, end]) => audio.currentTime < end)?.[0] ?? 0;
-  } else if (currentAudio) {
+    const position = audio.currentTime;
+    const target = greetingsTimings.find(([, end]) => position < end)?.[0] ?? 0;
+    try {
+      if (position !== target) {
+        // WebKit can abandon a seek without emitting seeked if no range is available.
+        if (audio.seekable?.length === 0) throw new Error('Greetings recording is not seekable');
+        audio.currentTime = target;
+      }
+      if (audio.seeking) {
+        const button = byId('greetings-play-all');
+        sequence.seeking = true;
+        button.disabled = true;
+        audio.addEventListener('seeked', () => {
+          if (greetingsSequence !== sequence) return;
+          sequence.seeking = false;
+          button.disabled = false;
+        }, { once: true });
+      }
+    } catch (error) {
+      greetingsSequenceError(sequence, error);
+    }
+  } else if (!sequence.seeking && currentAudio) {
     sequence.paused = false;
     const audio = currentAudio;
-    // Keep play() in the click handler. currentTime requests an accurate seek
-    // on the existing element, including before metadata has loaded.
+    // Keep play() in the click handler after the paused seek has completed.
     const onFailure = error => {
       if (error.name !== 'AbortError' && greetingsSequence === sequence && currentAudio === audio && !sequence.paused) {
         greetingsSequenceError(sequence, error);
       }
     };
     try {
-      audio.currentTime = sequence.resumeAt;
       audio.play().catch(onFailure);
     } catch (error) {
       onFailure(error);
