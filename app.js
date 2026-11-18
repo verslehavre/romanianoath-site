@@ -207,6 +207,8 @@ function renderDirection(direction) {
 }
 
 let greetingsData = null;
+let greetingsTimings = null;
+let greetingsRecording = null;
 const greetingsRoute = 'direction/communication/polite-communication/greetings';
 // Bulk playback uses the same MP3 player as individual recordings.
 let greetingsSequence = null;
@@ -219,6 +221,7 @@ function updateGreetingsSequenceButton() {
     ? '<path d="M8 5v14M16 5v14"/>' : '<path d="m8 5 11 7-11 7Z"/>';
 }
 function resetGreetingsSequence() {
+  if (greetingsSequence) URL.revokeObjectURL(greetingsSequence.url);
   greetingsSequence = null;
   updateGreetingsSequenceButton();
 }
@@ -240,24 +243,35 @@ byId('greetings-play-all').addEventListener('click', () => {
     const error = byId('greetings-content').querySelector('.greeting-audio-error');
     if (!error) return;
     error.hidden = true;
-    sequence = { paused: false };
+    sequence = { paused: false, url: URL.createObjectURL(greetingsRecording) };
     greetingsSequence = sequence;
-    playMp3(`data/audio/greetings_all.mp3`, '', false, null, {
+    playMp3(sequence.url, '', false, null, {
       sequence,
       unavailable: failure => greetingsSequenceError(sequence, failure),
       ended: resetGreetingsSequence,
     });
   } else if (!sequence.paused) {
     sequence.paused = true;
-    currentAudio?.pause();
+    const audio = currentAudio;
+    audio.pause();
+    // The first phrase whose end is still ahead also covers the gap before it.
+    sequence.resumeAt = greetingsTimings.find(([, end]) => audio.currentTime < end)?.[0] ?? 0;
   } else if (currentAudio) {
     sequence.paused = false;
     const audio = currentAudio;
-    audio.play().catch(error => {
+    // Keep play() in the click handler. currentTime requests an accurate seek
+    // on the existing element, including before metadata has loaded.
+    const onFailure = error => {
       if (error.name !== 'AbortError' && greetingsSequence === sequence && currentAudio === audio && !sequence.paused) {
         greetingsSequenceError(sequence, error);
       }
-    });
+    };
+    try {
+      audio.currentTime = sequence.resumeAt;
+      audio.play().catch(onFailure);
+    } catch (error) {
+      onFailure(error);
+    }
   }
   updateGreetingsSequenceButton();
 });
@@ -410,8 +424,31 @@ async function renderGreetings() {
       }
       content.append(section);
     }
-    byId('greetings-play-all').disabled = false;
     recordCommunicationVisit('greetings');
+    try {
+      if (!greetingsRecording) {
+        const [timings, response] = await Promise.all([
+          loadJson(`data/audio/greetings_all.json`),
+          fetch(`data/audio/greetings_all.mp3`),
+        ]);
+        if (!Array.isArray(timings) || timings.length !== 21 || !timings.every((range, index) =>
+          Array.isArray(range) && range.length === 2 && range.every(Number.isFinite)
+          && range[0] >= (index ? timings[index - 1][1] : 0) && range[1] > range[0]
+        ) || timings[0][0] !== 0) throw new Error('Invalid greetings timings');
+        if (!response.ok) throw new Error(`Could not load greetings MP3 (HTTP ${response.status})`);
+        // A local Blob stays seekable even when the HTTP server ignores Range.
+        const recording = await response.blob();
+        greetingsTimings = timings;
+        greetingsRecording = recording;
+      }
+      if (location.hash !== `#${greetingsRoute}` || opening !== communicationOpening) return;
+      byId('greetings-play-all').disabled = false;
+    } catch {
+      if (location.hash !== `#${greetingsRoute}` || opening !== communicationOpening) return;
+      const error = content.querySelector('.greeting-audio-error');
+      error.textContent = 'Не удалось загрузить общее аудио. Проверьте соединение и откройте подтему ещё раз.';
+      error.hidden = false;
+    }
   } catch {
     if (location.hash !== `#${greetingsRoute}` || opening !== communicationOpening) return;
     content.textContent = 'Не удалось загрузить приветствия. Проверьте соединение и откройте подтему ещё раз.';
