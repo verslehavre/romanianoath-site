@@ -5,6 +5,7 @@
 
 /* Chapter and block selection use the existing button and color styles. */
 .screen-title{font-size:24px;line-height:1.5;margin:16px 0 20px;overflow-wrap:anywhere}
+.exam-question-number{color:#53627c;font-size:.875rem;font-weight:650;margin:0 0 12px}
 /* Screen headings receive focus for screen readers, without a control outline. */
 .screen-title:focus,.screen-title:focus-visible{outline:none}
 .screen-back{margin-bottom:4px}
@@ -33,12 +34,12 @@
 
 /* The block's stages share the existing button styles. */
 #stages-chapter{margin:18px 0 8px;overflow-wrap:anywhere}
-#stage-list{display:grid;gap:12px;max-width:760px;list-style:none;margin:0;padding:0}
+#stage-list{display:grid;gap:8px;max-width:760px;list-style:none;margin:0;padding:0}
 #stage-list>li{display:block;list-style:none;margin:0;padding:0;min-width:0}
-#stage-list>li>button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:64px;padding:16px 20px;text-align:left;border-radius:14px}
+#stage-list>li>button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:58px;padding:10px 20px;text-align:left;border-radius:14px}
 #stage-list>li>button:disabled{opacity:1;color:#707c91;background:#f0f2f7;border-color:#e0e5ef}
 .stage-status{font-size:12px;font-weight:400;white-space:nowrap}
-@media(max-width:600px){#stage-list>li>button{padding:14px;gap:10px}}
+@media(max-width:600px){#stage-list>li>button{padding:10px 14px;gap:10px}}
 
 /* Answer choice shares the existing card and audio controls. */
 #choice-options{display:grid;gap:12px;margin-top:24px}
@@ -109,6 +110,12 @@
 .stage-progress{display:grid;font-size:12px;font-weight:400;color:#61718e;white-space:normal}
 .stage-progress small{font-size:11px}
 #block-progress{font-size:14px;color:#526693}
+#stages-screen #stages-chapter{margin:4px 0}
+#stages-screen #stages-title{margin:0 0 8px}
+#stages-screen #stage-block-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;max-width:760px}
+#stages-screen #stage-block-info p{margin-block:0}
+#stages-screen #block-progress{margin-inline-start:auto;text-align:end}
+#stages-screen #block-question-return{padding:6px 0;margin-bottom:4px}
 #progress-status{font-size:13px;color:#884615;background:#fff5e5;border:1px solid #eed5aa;padding:12px;border-radius:10px}
 #restart-choice{background:transparent;border-color:transparent;font-weight:400}
 @media(max-width:600px){#stage-list>li>button{align-items:flex-start}.stage-status{white-space:normal;text-align:right;max-width:100px}}
@@ -270,3 +277,30 @@
 .future-sections .topic-visited{position:static;align-self:center;justify-self:end}
 
 .greetings-controls{display:flex;gap:8px;flex-shrink:0}
+
+.page-header .site-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.75rem;
+}
+.page-header .site-navigation a {
+  color: #344b7e;
+  font-weight: 600;
+  text-decoration: none;
+}
+.page-header .site-navigation a[aria-current="page"] {
+  color: #233b70;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: #8299d5;
+  text-underline-offset: .35em;
+}
+.page-header .site-navigation a:hover { color: #202b42; text-decoration: underline; }
+@media (max-width: 600px) {
+  .page-header:has(.site-navigation) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: .65rem;
+  }
+  .page-header .site-navigation { grid-column: 1 / -1; grid-row: 2; }
+}

@@ -1,4 +1,8 @@
 const byId = (id) => document.getElementById(id);
+const blockQuestionReturn = byId('block-question-return');
+const publishedQuestionBlocks = new Map(Object.entries(
+  JSON.parse(byId('published-question-blocks')?.textContent ?? '{}'),
+));
 const toggles = [...document.querySelectorAll('[data-toggle]')];
 const labels = {
   'question-ru': 'перевод вопроса',
@@ -17,6 +21,34 @@ let choiceNotice = '';
 const memorySessions = new Map();
 const optionIds = ['correct', 'wrong_1', 'wrong_2'];
 let chapters = [];
+let examQuestionNumbers = new Map();
+const examChapterNames = {
+  c01: 'Конституция', c02: 'История', c03: 'География',
+  c04: 'Культура и цивилизация', c05: 'Ценности Европейского союза',
+};
+
+export function chapterQuestionNumbers(chapters) {
+  const numbers = new Map();
+  for (const chapter of chapters) {
+    chapter.blocks.flatMap(block => block.card_ids).forEach((id, index) => {
+      numbers.set(id, { number: index + 1, chapter: chapter.id });
+    });
+  }
+  return numbers;
+}
+
+function showBlockQuestionNumbers(block) {
+  const label = byId('block-question-numbers');
+  if (!label) return;
+  const numbers = block.card_ids.filter(id => availableCards.has(id))
+    .map(id => examQuestionNumbers.get(id).number);
+  const first = numbers[0];
+  const last = numbers.at(-1);
+  const span = last - first + 1 === numbers.length && numbers.length > 1
+    ? `${first}–${last}` : numbers.join(', ');
+  label.textContent = numbers.length === 1 ? `Вопрос ${span}` : `Вопросы ${span}`;
+  label.hidden = !numbers.length;
+}
 let selectedChapterId = null;
 let selectedBlockId = null;
 let initialRender = true;
@@ -617,7 +649,7 @@ function blockProgress(blockId) {
 }
 function renderStageProgress() {
   const results = progress.blocks[selectedBlockId] || {};
-  byId('block-progress').textContent = `Пройдено ${blockProgress(selectedBlockId)} из 4 упражнений`;
+  byId('block-progress').textContent = `${blockProgress(selectedBlockId)} из 4 пройдено`;
   for (const exercise of exerciseModes) {
     const result = results[exercise];
     const icon = byId(`open-${exercise}`).querySelector('.stage-icon');
@@ -1374,7 +1406,17 @@ function navigate(route, replace = false) {
   renderRoute();
 }
 
+function showBlockQuestionReturn(heading, block, blockIndex) {
+  const href = publishedQuestionBlocks.get(block.id);
+  if (!blockQuestionReturn || !href) return;
+  blockQuestionReturn.href = href;
+  blockQuestionReturn.textContent = `← К вопросам блока ${blockIndex + 1}`;
+  heading.after(blockQuestionReturn);
+  blockQuestionReturn.hidden = false;
+}
+
 function renderRoute() {
+  if (blockQuestionReturn) blockQuestionReturn.hidden = true;
   if (communicationRoute !== location.hash) {
     communicationRoute = location.hash;
     communicationOpening += 1;
@@ -1427,6 +1469,8 @@ function renderRoute() {
         byId('open-speaking').disabled = !choiceReady(block);
         byId('speaking-stage-status').textContent = byId('choice-stage-status').textContent;
         renderStageProgress();
+        showBlockQuestionNumbers(block);
+        showBlockQuestionReturn(byId('stage-block-info') ?? byId('block-question-numbers') ?? byId('stages-title'), block, blockIndex);
         showScreen('stages-screen', 'stages-title');
         return;
       }
@@ -1450,6 +1494,7 @@ function renderRoute() {
       index = 0;
       studyAttempt = { id: newAttemptId(), visited: new Set() };
       byId('study-title').textContent = `Блок ${blockIndex + 1}`;
+      showBlockQuestionReturn(byId('study-title'), block, blockIndex);
       showScreen('trainer');
       renderCard(true);
       return;
@@ -1571,6 +1616,13 @@ function renderCard(moveFocus = false) {
   fullAnswerToggle.classList.toggle('primary', mode !== 'speaking');
   fullAnswerToggle.parentElement.classList.toggle('speaking-full-area', mode === 'speaking');
   const card = cards[index];
+  const label = byId('exam-question-number');
+  if (label) {
+    const exam = examQuestionNumbers.get(card.id);
+    const name = exam && examChapterNames[exam.chapter];
+    label.textContent = name ? `Вопрос ${exam.number} · ${name}` : '';
+    label.hidden = !name;
+  }
   if (mode === 'study') studyAttempt?.visited.add(card.id);
   byId('topic').textContent = nonempty(card.topic) ? card.topic : 'Întrebări de studiu';
   byId('question').textContent = card.question;
@@ -1873,6 +1925,7 @@ async function initialize() {
       }
     } else optionsUnavailable = true;
     chapters = structure.chapters;
+    examQuestionNumbers = chapterQuestionNumbers(chapters);
     recoverRestore();
     loadProgress();
     navigate(location.hash.slice(1) || 'chapters', true);

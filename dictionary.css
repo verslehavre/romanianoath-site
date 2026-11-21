@@ -1,0 +1,94 @@
+.dictionary-crumbs { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; font-size: .875rem; }
+.dictionary a { color: #294887; text-underline-offset: .2em; }
+.dictionary :is(h2, p, a, summary) { overflow-wrap: anywhere; }
+.dictionary-controls { display: grid; gap: .65rem; padding: .875rem 0; border-top: 1px solid #d8e0ec; }
+.dictionary-search-controls { display: grid; gap: .45rem; }
+.dictionary-controls [data-count]:empty { position: absolute; }
+.dictionary-controls label { font-weight: 650; }
+.dictionary-controls p { margin: 0; color: #53627c; }
+.dictionary-search, .dictionary-filters { display: flex; flex-wrap: wrap; gap: .45rem; }
+.dictionary-search input {
+  flex: 1 1 13rem;
+  min-width: 0;
+  padding: .55rem .7rem;
+  font: inherit;
+  border: 1px solid #a9b7cc;
+  border-radius: .55rem;
+}
+.dictionary-search input:focus-visible { outline: 3px solid #8299d5; outline-offset: 2px; }
+.dictionary-filters button[aria-pressed="true"] { background: #eaf0ff; border-color: #8299d5; }
+.dictionary-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #d8e0ec; }
+#dictionary-dates { margin-top: 1.5rem; scroll-margin-top: 1rem; }
+.dictionary #dictionary-dates-title { margin: 0 0 .75rem; font-size: 1.35rem; }
+.dictionary:has(.dictionary-dates-link[aria-pressed="true"]) #dictionary-dates { margin-top: 0; }
+.dictionary:has(.dictionary-dates-link[aria-pressed="true"]) #dictionary-dates-title { display: none; }
+.dictionary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto;
+  gap: .15rem 1rem;
+  align-items: baseline;
+  padding: .75rem 0;
+  border-top: 1px solid #d8e0ec;
+}
+.dictionary-row h2 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.5; }
+.dictionary-translations { margin: 0; line-height: 1.5; }
+.dictionary-sources { grid-column: 1 / -1; font-size: .875rem; }
+.dictionary .dictionary-sources a { color: #53627c; text-decoration: none; }
+.dictionary .dictionary-sources a:hover,
+.dictionary .dictionary-sources a:focus-visible { color: #294887; text-decoration: underline; }
+.dictionary-filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .75rem; }
+.dictionary .dictionary-dates-link {
+  display: inline-flex;
+  gap: .35rem;
+  align-items: center;
+  padding: .45rem .55rem;
+  color: #344b7e;
+  font-size: .875rem;
+  font-weight: 650;
+  text-decoration: none;
+  border-radius: .5rem;
+}
+.dictionary .dictionary-dates-link:hover,
+.dictionary .dictionary-dates-link[aria-pressed="true"] { background: #eaf0ff; }
+.dictionary-audio { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
+.dictionary [data-audio] {
+  color: #344b7e;
+  border: 1px solid #e2e7f0;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.dictionary [data-audio]:hover { background: #edf2fc; border-color: #9eafd2; }
+.dictionary [data-audio]:active { background: #eaf0ff; border-color: #a5b7de; }
+.dictionary-audio-pause, [data-audio][data-playing] .dictionary-audio-play { display: none; }
+[data-audio][data-playing] .dictionary-audio-pause { display: inline; }
+.dictionary-audio-error { color: #93301e; font-size: .875rem; max-width: 11rem; }
+.dictionary .dictionary-back-top {
+  position: fixed;
+  right: max(.5rem, env(safe-area-inset-right));
+  bottom: max(.75rem, env(safe-area-inset-bottom));
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #d8e0ec;
+  border-radius: .65rem;
+  background: #fff;
+  color: #294887;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.dictionary .dictionary-back-top:hover { background: #eef2f9; }
+@media screen and (max-width: 1080px) {
+  /* Keep the fixed control outside the area used by audio and source links. */
+  .dictionary-list { padding-inline-end: calc(2.5rem + env(safe-area-inset-right)); }
+}
+@media print {
+  .dictionary .dictionary-back-top { display: none; }
+}
+@media (max-width: 640px) {
+  .dictionary-row { grid-template-columns: minmax(0, 1fr); }
+  .dictionary-audio { justify-content: flex-start; }
+  .dictionary-sources { grid-column: auto; }
+}

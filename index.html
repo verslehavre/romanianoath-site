@@ -11,13 +11,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
   <link rel="canonical" href="https://romanianoath.com/">
-  <link rel="stylesheet" href="styles.css?v=greetings-controls-46">
-  <script type="module" src="app.js?v=greetings-pause-seek-34"></script>
+  <link rel="stylesheet" href="styles.css?v=stages-layout-47">
+  <script type="module" src="app.js?v=stages-layout-37"></script>
 </head>
 <body>
   <main class="workspace">
     <header class="page-header">
       <a class="brand" href="./">Romanian <span>Oath Trainer</span></a>
+      <nav class="site-navigation" aria-label="Навигация сайта"><a href="questions/">Вопросы</a><a href="dictionary/">Словарь</a></nav>
       <span class="badge">Практика · RO / RU</span>
     </header>
     <div class="intro"><h1>Подготовка к румынской присяге</h1><p>Бесплатный онлайн-тренажёр с вопросами и ответами, аудированием и практикой устной речи на румынском языке.</p></div>
@@ -100,7 +101,11 @@
       <button id="back-to-blocks" class="screen-back" type="button">← На главную</button>
       <p id="stages-chapter" class="eyebrow" lang="ro"></p>
       <h2 id="stages-title" class="screen-title" tabindex="-1"></h2>
-      <p id="block-progress" role="status"></p>
+      <div id="stage-block-info">
+        <p id="block-question-numbers" class="exam-question-number" hidden></p>
+        <p id="block-progress" role="status"></p>
+      </div>
+      <a id="block-question-return" class="return-link" hidden></a>
       <ul id="stage-list" role="list">
         <li><button id="open-study" type="button"><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Изучение</span><span id="study-progress" class="stage-progress"></span></span><span aria-hidden="true">›</span></button></li>
         <li><button id="open-choice" type="button" disabled><span class="stage-icon" aria-hidden="true">○</span><span class="stage-label"><span>Выбери ответ</span><span id="choice-progress" class="stage-progress"></span></span><span id="choice-stage-status" class="stage-status">Материалы готовятся</span></button></li>
@@ -130,6 +135,7 @@
       <progress id="progress" max="5" value="1" aria-label="Положение в наборе"></progress>
       <article id="card" class="card" tabindex="-1" aria-labelledby="question">
         <p id="topic" class="eyebrow" lang="ro"></p>
+        <p id="exam-question-number" class="exam-question-number" hidden></p>
         <span class="language-label">ВОПРОС · ROMÂNĂ</span>
         <section id="listening-controls" hidden aria-labelledby="listening-heading">
           <h3 id="listening-heading"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 13H3v7h4v-7H4Zm16 0h1v7h-4v-7h3Z"/></svg>Прослушайте вопрос</h3>
@@ -211,6 +217,7 @@
       </article>
       <nav class="navigation" aria-label="Навигация по карточкам"><button id="previous" type="button">← Назад</button><span>В своём темпе</span><button id="next" type="button" class="primary">Далее →</button></nav>
     </section>
+    <script id="published-question-blocks" type="application/json">{"c01_b01":"questions/constitution/#c01_b01","c01_b02":"questions/constitution/#c01_b02","c01_b03":"questions/constitution/#c01_b03","c01_b04":"questions/constitution/#c01_b04","c01_b05":"questions/constitution/#c01_b05","c01_b06":"questions/constitution/#c01_b06","c01_b07":"questions/constitution/#c01_b07","c01_b08":"questions/constitution/#c01_b08","c01_b09":"questions/constitution/#c01_b09","c01_b10":"questions/constitution/#c01_b10","c01_b11":"questions/constitution/#c01_b11","c01_b12":"questions/constitution/#c01_b12","c01_b13":"questions/constitution/#c01_b13","c01_b14":"questions/constitution/#c01_b14","c01_b15":"questions/constitution/#c01_b15","c01_b16":"questions/constitution/#c01_b16","c01_b17":"questions/constitution/#c01_b17","c01_b18":"questions/constitution/#c01_b18","c01_b19":"questions/constitution/#c01_b19","c01_b20":"questions/constitution/#c01_b20","c01_b21":"questions/constitution/#c01_b21","c01_b22":"questions/constitution/#c01_b22","c01_b23":"questions/constitution/#c01_b23","c01_b24":"questions/constitution/#c01_b24","c01_b25":"questions/constitution/#c01_b25","c01_b26":"questions/constitution/#c01_b26","c01_b27":"questions/constitution/#c01_b27","c01_b28":"questions/constitution/#c01_b28","c01_b29":"questions/constitution/#c01_b29","c01_b30":"questions/constitution/#c01_b30","c01_b31":"questions/constitution/#c01_b31","c01_b32":"questions/constitution/#c01_b32","c01_b33":"questions/constitution/#c01_b33","c02_b01":"questions/history/#c02_b01","c02_b02":"questions/history/#c02_b02","c02_b03":"questions/history/#c02_b03","c02_b04":"questions/history/#c02_b04","c02_b05":"questions/history/#c02_b05","c02_b06":"questions/history/#c02_b06","c02_b07":"questions/history/#c02_b07","c02_b08":"questions/history/#c02_b08"}</script>
     <footer class="page-footer">© 2026 Romanian Oath Trainer<br><a href="about.html">О проекте и контакты</a></footer>
   </main>
 <!-- Cloudflare Web Analytics -->
