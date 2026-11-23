@@ -71,18 +71,18 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  padding: 0;
   border: 1px solid #d8e0ec;
   border-radius: .65rem;
   background: #fff;
   color: #294887;
   font-size: 1.25rem;
   font-weight: 700;
+  text-decoration: none;
 }
 .dictionary .dictionary-back-top:hover { background: #eef2f9; }
 @media screen and (max-width: 1080px) {
-  /* Keep the fixed control outside the area used by audio and source links. */
-  .dictionary-list { padding-inline-end: calc(2.5rem + env(safe-area-inset-right)); }
+  /* Keep the fixed control clear of filters, audio and source links. */
+  .dictionary-controls, .dictionary-list { padding-inline-end: calc(2.5rem + env(safe-area-inset-right)); }
 }
 @media print {
   .dictionary .dictionary-back-top { display: none; }

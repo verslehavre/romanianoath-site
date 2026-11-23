@@ -156,16 +156,12 @@ dictionary.addEventListener('click', event => {
   if (filter) keepControlsVisible();
 });
 
-function updateBackTop() {
-  backTop.hidden = window.scrollY < 2 * window.innerHeight;
-}
-
-backTop.addEventListener('click', () => {
+backTop.addEventListener('click', event => {
+  if (event.defaultPrevented || event.button || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+  event.preventDefault();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({top: 0, behavior: reducedMotion ? 'instant' : 'smooth'});
 });
-window.addEventListener('scroll', updateBackTop, {passive: true});
-window.addEventListener('resize', updateBackTop);
 
 datesLink?.setAttribute('role', 'button');
 selectFilter(datesLink && location.hash === datesHash ? 'dates' : '');
@@ -178,4 +174,3 @@ if (selectedFilter === 'dates') {
     if (selectedFilter === 'dates') keepControlsVisible();
   }, {once: true});
 }
-updateBackTop();

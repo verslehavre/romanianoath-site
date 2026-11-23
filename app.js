@@ -1811,11 +1811,14 @@ function speakRomanian(text, button = null, callbacks = {}) {
   try { synth.speak(utterance); } catch { utterance.onerror(); }
 }
 
+const audioVersions = {"data/audio/pdf01_t030_q01_answer.mp3": "eb65cbd6cd6e", "data/audio/pdf01_t030_q02_answer.mp3": "2721d6b91ac0", "data/audio/pdf01_t030_q05_answer.mp3": "1880fcd6aeb8", "data/audio/pdf01_t033_q01_answer.mp3": "8d37d28f4def", "data/audio/pdf01_t033_q01_vocab_02.mp3": "cb1d41fe16f7", "data/audio/pdf01_t033_q02_answer.mp3": "6ae217dc4648", "data/audio/pdf01_t033_q02_vocab_02.mp3": "19ddb4387e5f"};
+
 async function playMp3(path, text, automatic = false, button = null, callbacks = {}) {
   stopSpeech(Boolean(callbacks.sequence && callbacks.sequence === greetingsSequence));
   setAudioStatus();
   const generation = speechGeneration;
-  const audio = new Audio(path);
+  const version = audioVersions[path];
+  const audio = new Audio(version ? `${path}?v=${version}` : path);
   currentAudio = audio;
   activeAudioButton = button;
   let failed = false;
