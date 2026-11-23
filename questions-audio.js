@@ -1,9 +1,17 @@
 let active = null;
 
+function pauseNativePlayers(except) {
+  for (const audio of document.querySelectorAll('.question-audio:not([hidden]) audio')) {
+    if (audio !== except && !audio.paused) audio.pause();
+  }
+}
+
 function preparePlayer(details, signal) {
   const audio = details.querySelector('audio');
-  const label = details.querySelector('summary').textContent;
-  if (!audio || !label.trim()) throw new Error('Missing audio controls');
+  const label = details.dataset.playLabel;
+  if (!audio || !label) throw new Error('Missing audio controls');
+  // Closing a native player does not stop its audio.
+  if (!audio.paused) return null;
 
   const button = document.createElement('button');
   button.type = 'button';
@@ -66,6 +74,7 @@ function preparePlayer(details, signal) {
     const currentAttempt = ++attempt;
     setState(false, buttonLabel.textContent);
     try {
+      pauseNativePlayers();
       await audio.play();
     } catch {
       if (currentAttempt === attempt) showError();
@@ -81,11 +90,19 @@ const controls = [];
 try {
   for (const details of nativePlayers) controls.push(preparePlayer(details, listeners.signal));
   nativePlayers.forEach((details, index) => {
+    if (!controls[index]) return;
     details.before(controls[index]);
     details.hidden = true;
   });
+  document.addEventListener('play', ({target}) => {
+    if (!(target instanceof HTMLAudioElement) || target.paused ||
+        !target.closest('.question-audio:not([hidden])')) return;
+    active?.reset();
+    active = null;
+    pauseNativePlayers(target);
+  }, {capture: true, signal: listeners.signal});
 } catch {
   listeners.abort();
-  for (const control of controls) control.remove();
+  for (const control of controls) control?.remove();
   for (const details of nativePlayers) details.hidden = false;
 }
