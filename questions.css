@@ -95,15 +95,15 @@
 .questions-page .question-card .question-secondary { margin-top: .35rem; }
 .questions-page .question-secondary { color: var(--questions-muted); }
 .question-answer { background: var(--questions-tint); border-radius: .625rem; margin-top: .65rem; padding: .65rem; }
-.question-audio, .question-audio-controls { margin-top: .375rem; }
+/* Swapping the link for the button preserves the card's block height. */
 .question-audio-controls {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: .25rem .65rem;
+  min-height: 2rem;
+  margin-top: .375rem;
 }
-.question-audio-controls button, .question-audio summary {
-  display: grid;
+.question-audio-controls > :is(a, button) {
+  display: inline-grid;
   place-items: center;
   min-height: 2rem;
   padding: .25rem .6rem;
@@ -112,25 +112,20 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
-  cursor: pointer;
   border: 1px solid #d5ddea;
   border-radius: 10px;
   background: #fff;
 }
-.question-audio-controls button span,
-.question-audio-controls button::after { grid-area: 1 / 1; }
-.question-audio-controls button::after {
-  content: attr(data-original-label);
-  visibility: hidden;
+.question-audio-controls > button,
+.question-audio-ready .question-audio-controls > a { display: none; }
+.question-audio-ready .question-audio-controls > button { display: inline-grid; }
+.question-audio-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
-.question-audio-status { color: var(--questions-muted); font-size: .875rem; }
-.question-audio summary {
-  width: fit-content;
-}
-.question-audio summary::-webkit-details-marker { display: none; }
-.question-audio summary:hover { background: #edf2fc; border-color: #9eafd2; }
-.question-audio summary:focus-visible { outline: 3px solid #8299d5; outline-offset: 3px; }
-.question-audio audio { display: block; width: min(100%, 20rem); margin-top: .3rem; }
 .questions-page :target { scroll-margin-top: 1rem; }
 .questions-page .question-card:target { outline: 2px solid #5e77b4; outline-offset: 2px; }
 .question-back { margin: 1.5rem 0 0; }
@@ -143,7 +138,7 @@
 @media print {
   .questions-page { max-width: none; padding: 0; color: #111; font-size: 11pt; line-height: 1.4; }
   body:has(.questions-page) { background: #fff; }
-  .questions-page :is(.page-header, .page-footer, nav, .question-audio, .question-audio-controls, .question-back, .question-catalog-link, .question-read, .question-block-action) {
+  .questions-page :is(.page-header, .page-footer, nav, .question-audio-controls, .question-audio-status, .question-back, .question-catalog-link, .question-read, .question-block-action) {
     display: none !important;
   }
   .questions-page .intro { margin: 0 0 12pt; }
