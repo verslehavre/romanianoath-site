@@ -115,7 +115,7 @@
 #stages-screen #stage-block-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;max-width:760px}
 #stages-screen #stage-block-info p{margin-block:0}
 #stages-screen #block-progress{margin-inline-start:auto;text-align:end}
-#stages-screen #block-question-return{padding:6px 0;margin-bottom:4px}
+#stages-screen #block-question-return{padding:6px 0;margin-top:8px;font-size:14px;color:#526693}
 #progress-status{font-size:13px;color:#884615;background:#fff5e5;border:1px solid #eed5aa;padding:12px;border-radius:10px}
 #restart-choice{background:transparent;border-color:transparent;font-weight:400}
 @media(max-width:600px){#stage-list>li>button{align-items:flex-start}.stage-status{white-space:normal;text-align:right;max-width:100px}}

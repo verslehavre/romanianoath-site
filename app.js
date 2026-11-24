@@ -39,15 +39,22 @@ export function chapterQuestionNumbers(chapters) {
 
 function showBlockQuestionNumbers(block) {
   const label = byId('block-question-numbers');
-  if (!label) return;
   const numbers = block.card_ids.filter(id => availableCards.has(id))
     .map(id => examQuestionNumbers.get(id).number);
   const first = numbers[0];
   const last = numbers.at(-1);
   const span = last - first + 1 === numbers.length && numbers.length > 1
     ? `${first}–${last}` : numbers.join(', ');
-  label.textContent = numbers.length === 1 ? `Вопрос ${span}` : `Вопросы ${span}`;
-  label.hidden = !numbers.length;
+  if (label) {
+    label.textContent = numbers.length === 1 ? `Вопрос ${span}` : `Вопросы ${span}`;
+    label.hidden = !numbers.length;
+  }
+  const href = publishedQuestionBlocks.get(block.id);
+  if (blockQuestionReturn && href && numbers.length) {
+    blockQuestionReturn.href = href;
+    blockQuestionReturn.textContent = `Читать вопросы и ответы ${span}`;
+    blockQuestionReturn.hidden = false;
+  }
 }
 let selectedChapterId = null;
 let selectedBlockId = null;
@@ -1397,25 +1404,26 @@ function renderBlocks() {
 }
 
 // Small hash routes keep browser Back/Forward native, without a router.
+function replaceRoute(route, parent) {
+  if (location.hash === `#${route}`) return;
+  try {
+    history.replaceState({ route, parent }, '', `#${route}`);
+  } catch (error) {
+    if (!(error instanceof DOMException)) throw error;
+    // The selected card can still be shown when the browser rejects a history write.
+  }
+}
+
 function navigate(route, replace = false) {
   if (replace) {
-    history.replaceState({ route, parent: history.state?.route === route ? history.state.parent : null }, '', `#${route}`);
+    replaceRoute(route, history.state?.route === route ? history.state.parent : null);
   } else if (location.hash !== `#${route}`) {
     history.pushState({ route, parent: location.hash.slice(1) }, '', `#${route}`);
   }
-  renderRoute();
+  renderRoute(route);
 }
 
-function showBlockQuestionReturn(heading, block, blockIndex) {
-  const href = publishedQuestionBlocks.get(block.id);
-  if (!blockQuestionReturn || !href) return;
-  blockQuestionReturn.href = href;
-  blockQuestionReturn.textContent = `← К вопросам блока ${blockIndex + 1}`;
-  heading.after(blockQuestionReturn);
-  blockQuestionReturn.hidden = false;
-}
-
-function renderRoute() {
+function renderRoute(route = location.hash.slice(1)) {
   if (blockQuestionReturn) blockQuestionReturn.hidden = true;
   if (communicationRoute !== location.hash) {
     communicationRoute = location.hash;
@@ -1423,7 +1431,7 @@ function renderRoute() {
   }
   if (byId('restore-dialog').open) cancelRestore();
   stopRecognition(true);
-  const routeParts = location.hash.slice(1).split('/');
+  const routeParts = route.split('/');
   if (routeParts[0] === 'direction') {
     const direction = directions.find(entry => entry.id === routeParts[1] && entry.sections);
     if (direction) {
@@ -1442,13 +1450,13 @@ function renderRoute() {
   renderDirectionNav('exam');
   if (!chapters.length) return;
   loadProgress();
-  const [screen, chapterId, blockId, extra] = location.hash.slice(1).split('/');
+  const [screen, chapterId, blockId, cardId] = routeParts;
   const chapter = chapters.find((entry) => entry.id === chapterId);
   if (screen === 'chapters' && !chapterId) {
     renderChapters(!initialRender);
     return;
   }
-  if (chapter && !extra) {
+  if (chapter && (screen === 'study' ? routeParts.length <= 4 : !cardId)) {
     selectedChapterId = chapter.id;
     if (screen === 'chapter' && !blockId) {
       renderBlocks();
@@ -1470,7 +1478,6 @@ function renderRoute() {
         byId('speaking-stage-status').textContent = byId('choice-stage-status').textContent;
         renderStageProgress();
         showBlockQuestionNumbers(block);
-        showBlockQuestionReturn(byId('stage-block-info') ?? byId('block-question-numbers') ?? byId('stages-title'), block, blockIndex);
         showScreen('stages-screen', 'stages-title');
         return;
       }
@@ -1491,12 +1498,11 @@ function renderRoute() {
       }
       choiceView('card');
       cards = block.card_ids.filter((id) => availableCards.has(id)).map((id) => availableCards.get(id));
-      index = 0;
+      index = Math.max(0, cards.findIndex(card => card.id === cardId));
       studyAttempt = { id: newAttemptId(), visited: new Set() };
-      byId('study-title').textContent = `Блок ${blockIndex + 1}`;
-      showBlockQuestionReturn(byId('study-title'), block, blockIndex);
+      byId('study-title').textContent = `Блок ${blockIndex + 1} · Изучение`;
       showScreen('trainer');
-      renderCard(true);
+      renderStudyCard();
       return;
     }
     // A direct link must not bypass material readiness.
@@ -1513,7 +1519,7 @@ function backTo(route) {
   else navigate(route);
 }
 
-window.addEventListener('popstate', renderRoute);
+window.addEventListener('popstate', () => renderRoute());
 
 byId('chapter-list').addEventListener('click', (event) => {
   const blockButton = event.target.closest('button[data-block-id]');
@@ -1608,6 +1614,12 @@ export function formatFullAnswer(text) {
   return text.replace(/[ \t]*\uF0A7[ \t]*/gu, '\n• ');
 }
 
+function renderStudyCard() {
+  const card = cards[index];
+  replaceRoute(`study/${selectedChapterId}/${selectedBlockId}/${card.id}`, history.state?.parent ?? null);
+  renderCard(true);
+}
+
 function renderCard(moveFocus = false) {
   stopRecognition(true);
   stopSpeech();
@@ -1668,11 +1680,12 @@ function renderCard(moveFocus = false) {
     byId(target).hidden = true;
     updateRevealButton(button, false);
   }
-  byId('position').textContent = `${index + 1} / ${cards.length}`;
+  byId('position').textContent = mode === 'study'
+    ? `Карточка ${index + 1} из ${cards.length}` : `${index + 1} / ${cards.length}`;
   byId('progress').max = cards.length;
   byId('progress').value = index + 1;
   byId('previous').disabled = false;
-  byId('previous').textContent = index === 0 ? '← К этапам' : '← Назад';
+  byId('previous').textContent = index === 0 ? '← К этапам' : mode === 'study' ? '← Предыдущая' : '← Назад';
   const toChoice = mode === 'study' && index === cards.length - 1 && choiceReady(selectedBlock());
   byId('next').disabled = false;
   byId('next').textContent = toChoice ? 'Далее: Выбери ответ →' : index === cards.length - 1
@@ -1775,7 +1788,7 @@ for (const [id, delta] of [['previous', -1], ['next', 1]]) {
     const nextIndex = index + delta;
     if (nextIndex < 0 || nextIndex >= cards.length) return;
     index = nextIndex;
-    renderCard(true);
+    renderStudyCard();
   });
 }
 
