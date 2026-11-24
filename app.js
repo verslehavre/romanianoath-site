@@ -1625,9 +1625,9 @@ function renderCard(moveFocus = false) {
   }
   if (mode === 'study') studyAttempt?.visited.add(card.id);
   byId('topic').textContent = nonempty(card.topic) ? card.topic : 'Întrebări de studiu';
-  byId('question').textContent = card.question;
+  byId('question').textContent = card.display_question ?? card.question;
   byId('question-ru-text').textContent = card.question_ru;
-  byId('answer-ro-text').textContent = formatFullAnswer(card.source_answer);
+  byId('answer-ro-text').textContent = card.display_source_answer ?? formatFullAnswer(card.source_answer);
   byId('answer-ru-text').textContent = card.answer_ru;
   const vocabulary = byId('vocabulary-list');
   vocabulary.replaceChildren();
@@ -1902,7 +1902,7 @@ async function initialize() {
   try {
     optionsUnavailable = false;
     const [originals, translations, structure, options] = await Promise.all([
-      loadJson('./data/processed/qa_cards.json'),
+      loadJson('./data/processed/qa_cards.json?v=a435302fe17c'),
       loadJson('./data/processed/qa_translations.json'),
       loadJson('./data/processed/learning_blocks.json'),
       // Review data can change independently of the app; revalidate cached responses.

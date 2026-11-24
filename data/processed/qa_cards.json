@@ -141,7 +141,8 @@
     "page": 2,
     "question": "Care sunt simbolurile naţionale ale României?",
     "source_answer": "Simbolurile naţionale ale României sunt:  Drapelul României  Ziua naţională a României  Imnul naţional al României  Stema ţării şi sigiliul",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Simbolurile naţionale ale României sunt:\n• Drapelul României\n• Ziua naţională a României\n• Imnul naţional al României\n• Stema ţării şi sigiliul"
   },
   {
     "id": "pdf01_t003_q01",
@@ -285,7 +286,8 @@
     "page": 4,
     "question": "Ce se înţelege prin inviolabilitatea domiciliului?",
     "source_answer": "Prin inviolabilitatea domiciliului se înţelege faptul că nimeni nu poate intra sau rămâne în domiciliul ori în reşedinţa unei persoane fără voia ei.Nu se consideră a fi violare de domiciliu pătrunderea în locuinţa unei persoane fără acordul acesteia pentru: - executarea unui mandat de arestare sau a unei hotărâri judecătoreşti; - înlăturarea unei primejdii privind viaţa, integritatea fizică sau bunurile unei persoane; - apărarea securităţii naţionale sau a ordinii publice; - prevenirea răspândirii unei epidemii.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Prin inviolabilitatea domiciliului se înţelege faptul că nimeni nu poate intra sau rămâne în domiciliul ori în reşedinţa unei persoane fără voia ei. Nu se consideră a fi violare de domiciliu pătrunderea în locuinţa unei persoane fără acordul acesteia pentru:\n• executarea unui mandat de arestare sau a unei hotărâri judecătoreşti;\n• înlăturarea unei primejdii privind viaţa, integritatea fizică sau bunurile unei persoane;\n• apărarea securităţii naţionale sau a ordinii publice;\n• prevenirea răspândirii unei epidemii."
   },
   {
     "id": "pdf01_t005_q01",
@@ -309,7 +311,8 @@
     "page": 4,
     "question": "De la ce vârstă pot cetăţenii români să candideze pentru Camera Deputaţilor și  pentru Senat? Dar pentru a fi Preşedintele României?",
     "source_answer": "Pentru a candida la Camera Deputaţilor, cetăţenii trebuie să aibă cel puţin 23 de ani, pentru Senat trebuie să aibă cel puţin 33 de ani, iar pentru a candida la Preşedinţie trebuie să aibă cel puţin 35 de ani.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "De la ce vârstă pot cetăţenii români să candideze pentru Camera Deputaţilor și pentru Senat? Dar pentru a fi Preşedintele României?"
   },
   {
     "id": "pdf01_t005_q03",
@@ -537,7 +540,8 @@
     "page": 7,
     "question": "Câte categorii (tipuri) de legi adoptă Parlamentul?",
     "source_answer": "Parlamentul adoptă 3 categorii de legi: legi constituţionale (de modificare a Constituţiei), legi organice (de exemplu, legea cetăţeniei, legea învăţământului, legile privind dreptul la muncă etc.) şi  legi ordinare (obişnuite).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Parlamentul adoptă 3 categorii de legi: legi constituţionale (de modificare a Constituţiei), legi organice (de exemplu, legea cetăţeniei, legea învăţământului, legile privind dreptul la muncă etc.) şi legi ordinare (obişnuite)."
   },
   {
     "id": "pdf01_t008_q04",
@@ -561,7 +565,9 @@
     "page": 8,
     "question": "Când  intră în vigoare o lege?",
     "source_answer": "Legea se publică în Monitorul Oficial al României (adică în jurnalul oficial al statului român)  şi intră în vigoare la 3 zile de la data publicării sau la o dată ulterioară prevăzută în textul ei.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Când intră în vigoare o lege?",
+    "display_source_answer": "Legea se publică în Monitorul Oficial al României (adică în jurnalul oficial al statului român) şi intră în vigoare la 3 zile de la data publicării sau la o dată ulterioară prevăzută în textul ei."
   },
   {
     "id": "pdf01_t008_q06",
@@ -585,7 +591,8 @@
     "page": 8,
     "question": "Ce condiţii trebuie să îndeplinească o persoană pentru a putea fi aleasă în funcţia de deputat sau de senator?",
     "source_answer": "O persoană poate fi aleasă în funcţia de deputat sau de senator dacă îndeplineşte următoarele condiţii:  este cetăţean român şi are domiciliul în ţară;  are drept de vot şi dreptul de a fi ales;  are dreptul de a face parte dintr-un partid politic;  are vârsta de cel puţin 23 de ani, dacă vrea să fie aleasă în Camera Deputaţilor, respectiv de cel puţin 33 de ani, dacă vrea să fie aleasă în Senat.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "O persoană poate fi aleasă în funcţia de deputat sau de senator dacă îndeplineşte următoarele condiţii:\n• este cetăţean român şi are domiciliul în ţară;\n• are drept de vot şi dreptul de a fi ales;\n• are dreptul de a face parte dintr-un partid politic;\n• are vârsta de cel puţin 23 de ani, dacă vrea să fie aleasă în Camera Deputaţilor, respectiv de cel puţin 33 de ani, dacă vrea să fie aleasă în Senat."
   },
   {
     "id": "pdf01_t009_q02",
@@ -597,7 +604,8 @@
     "page": 8,
     "question": "Care sunt incompatibilităţile prevăzute de Constituţie pentru deputaţi şi senatori?",
     "source_answer": "Constituţia prevede că parlamentarii nu au voie:  să fie deputaţi şi senatori în acelaşi timp;  să aibă o altă funcţie publică, cu excepţia celei de membru al guvernului.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Constituţia prevede că parlamentarii nu au voie:\n• să fie deputaţi şi senatori în acelaşi timp;\n• să aibă o altă funcţie publică, cu excepţia celei de membru al guvernului."
   },
   {
     "id": "pdf01_t009_q03",
@@ -729,7 +737,8 @@
     "page": 10,
     "question": "Când participă Președintele la ședințele Guvernului?",
     "source_answer": "Președintele poate să participe la ședințele Guvernului atunci când se discută probleme foarte importante privind politica externă, apărarea ţării sau ordinea publică. Primul-ministru îi poate cere Preşedintelui să participe la şedinţele Guvernului şi în alte situaţii. Preşedintele României conduceşedinţele Guvernului la care participă.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Președintele poate să participe la ședințele Guvernului atunci când se discută probleme foarte importante privind politica externă, apărarea ţării sau ordinea publică. Primul-ministru îi poate cere Preşedintelui să participe la şedinţele Guvernului şi în alte situaţii. Preşedintele României conduce şedinţele Guvernului la care participă."
   },
   {
     "id": "pdf01_t011_q02",
@@ -765,7 +774,8 @@
     "page": 11,
     "question": "Când poate fi suspendat din funcție Președintele României?",
     "source_answer": "Preşedintele poate fi suspendat din funcţie de către Parlament, în cazul în care comite fapte grave prin care încalcă  Constituţia. El poate fi suspendat de drept atunci când este pus sub acuzare pentru fapta de înaltă trădare.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Preşedintele poate fi suspendat din funcţie de către Parlament, în cazul în care comite fapte grave prin care încalcă Constituţia. El poate fi suspendat de drept atunci când este pus sub acuzare pentru fapta de înaltă trădare."
   },
   {
     "id": "pdf01_t011_q05",
@@ -801,7 +811,8 @@
     "page": 11,
     "question": "Care sunt condiţiile pe care trebuie să le îndeplinească o persoană pentru a putea fi aleasă în funcţia de Preşedinte al României?",
     "source_answer": "Poate fi aleasă Preşedinte al României persoana care îndeplineşte următoarele condiţii:  este cetăţean român şi are domiciliul în ţară;  are drept de vot şi dreptul de a fi ales;  are dreptul de a face parte dintr-un partid politic;  are vârsta de cel puţin 35 de ani.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Poate fi aleasă Preşedinte al României persoana care îndeplineşte următoarele condiţii:\n• este cetăţean român şi are domiciliul în ţară;\n• are drept de vot şi dreptul de a fi ales;\n• are dreptul de a face parte dintr-un partid politic;\n• are vârsta de cel puţin 35 de ani."
   },
   {
     "id": "pdf01_t012_q02",
@@ -813,7 +824,8 @@
     "page": 11,
     "question": "Ce reprezintă turul de scrutin?",
     "source_answer": "Turul de scrutin reprezintă o rundă, o etapă în cadrul alegerilor prezidenţiale. Alegerile prezidenţiale pot avea 2 etape (tururi de scrutin). În prima etapă a alegerilor (primul tur de scrutin), este ales preşedinte candidatul care a obţinut majoritatea voturilor alegătorilor înscrişi pe listele electorale (liste cu toţi cetăţenii care au drept de vot). Dacă niciunul dintre candidaţi nu a reuşit să obţină majoritatea de voturi, atunci se organizează a doua etapă a alegerilor (al doilea tur de scrutin), la care vor participa doar primii doi candidaţi care au obţinut cele  mai multe voturi în prima etapă. În a doua etapă a alegerilor, este ales preşedinte candidatul care obţine cel mai mare număr de voturi.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Turul de scrutin reprezintă o rundă, o etapă în cadrul alegerilor prezidenţiale. Alegerile prezidenţiale pot avea 2 etape (tururi de scrutin). În prima etapă a alegerilor (primul tur de scrutin), este ales preşedinte candidatul care a obţinut majoritatea voturilor alegătorilor înscrişi pe listele electorale (liste cu toţi cetăţenii care au drept de vot). Dacă niciunul dintre candidaţi nu a reuşit să obţină majoritatea de voturi, atunci se organizează a doua etapă a alegerilor (al doilea tur de scrutin), la care vor participa doar primii doi candidaţi care au obţinut cele mai multe voturi în prima etapă. În a doua etapă a alegerilor, este ales preşedinte candidatul care obţine cel mai mare număr de voturi."
   },
   {
     "id": "pdf01_t012_q03",
@@ -1029,7 +1041,8 @@
     "page": 14,
     "question": "Ce este votul de încredere?",
     "source_answer": "Votul de încredere reprezintă aprobarea pe care Parlamentul trebuie s-o dea listei Guvernului şi programului de guvernare, propuse de persoana desemnată în funcţia de prim- ministru. Abia după aprobarea Parlamentului, Preşedintele poate numi Guvernul.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Votul de încredere reprezintă aprobarea pe care Parlamentul trebuie s-o dea listei Guvernului şi programului de guvernare, propuse de persoana desemnată în funcţia de prim-ministru. Abia după aprobarea Parlamentului, Preşedintele poate numi Guvernul."
   },
   {
     "id": "pdf01_t015_q03",
@@ -1089,7 +1102,8 @@
     "page": 16,
     "question": "De câte feluri este administraţia publică?",
     "source_answer": "Administraţia publică este de 2 feluri: administraţie publică centrală -  la nivel naţional (pe toată ţara);  administraţie publică locală - la nivel local (judeţ, oraş, comună).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Administraţia publică este de 2 feluri: administraţie publică centrală - la nivel naţional (pe toată ţara); administraţie publică locală - la nivel local (judeţ, oraş, comună)."
   },
   {
     "id": "pdf01_t016_q02",
@@ -1173,7 +1187,8 @@
     "page": 16,
     "question": "Cine conduce treburile publice în oraşe şi comune?",
     "source_answer": "În oraşe şi comune treburile publice sunt conduse de consiliile locale şi  primarii aleşi, potrivit legii, de cetăţenii din oraşul sau comuna respectivă.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "În oraşe şi comune treburile publice sunt conduse de consiliile locale şi primarii aleşi, potrivit legii, de cetăţenii din oraşul sau comuna respectivă."
   },
   {
     "id": "pdf01_t017_q03",
@@ -1209,7 +1224,8 @@
     "page": 17,
     "question": "Cine numeşte  prefecţii?",
     "source_answer": "Prefecţii sunt numiţi de Guvern.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Cine numeşte prefecţii?"
   },
   {
     "id": "pdf01_t017_q06",
@@ -1449,7 +1465,8 @@
     "page": 19,
     "question": "Ce atribuţii are statul în economia României?",
     "source_answer": "Economia Românieieste o economie de piaţă, ce are la bază libera iniţiativă şi concurenţa. Aceasta înseamnă că oamenii îşi desfăşoară activitatea în mod liber şi autonom, fără a fi controlaţi de stat. Statul român are şi el nişte atribuţii în desfăşurarea activităţii economice, dar acestea nu sunt atribuţii de control, ci de protejare a intereselor naţionale, a intereselor cetăţenilor şi a mediului înconjurător. Astfel, statul trebuie să asigure: libertatea comerţului, protecţia concurenţei loiale, protejarea intereselor naţionale în desfăşurarea activităţii economice, ocrotirea mediului înconjurător, stimularea cercetării ştiinţifice, exploatarea resurselor naturale, crearea condiţiilor pentru creşterea calităţii vieţii oamenilor etc.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Economia României este o economie de piaţă, ce are la bază libera iniţiativă şi concurenţa. Aceasta înseamnă că oamenii îşi desfăşoară activitatea în mod liber şi autonom, fără a fi controlaţi de stat. Statul român are şi el nişte atribuţii în desfăşurarea activităţii economice, dar acestea nu sunt atribuţii de control, ci de protejare a intereselor naţionale, a intereselor cetăţenilor şi a mediului înconjurător. Astfel, statul trebuie să asigure: libertatea comerţului, protecţia concurenţei loiale, protejarea intereselor naţionale în desfăşurarea activităţii economice, ocrotirea mediului înconjurător, stimularea cercetării ştiinţifice, exploatarea resurselor naturale, crearea condiţiilor pentru creşterea calităţii vieţii oamenilor etc."
   },
   {
     "id": "pdf01_t021_q02",
@@ -1905,7 +1922,8 @@
     "page": 25,
     "question": "De câte feluri sunt instanţele de judecată?",
     "source_answer": "Deoarece conflictele care pot să apară sunt foarte diferite, din punctul de vedere al domeniului şi al importanţei normelor încălcate, şi pentru că, uneori, pot să apară nemulţumiri sau clarificări ale unor date şi fapte după ce judecătorul a luat decizia, au fost create mai multe instanţe de judecată, pentru care s-a stabilit o ordine pe trepte. Acestea sunt: judecătoriile, tribunalele, curţile de apel şi Înalta Curte de Casaţie şi Justiţie. În afara acestor instanţe, mai există şi tribunale militare care se ocupă de soluţionarea cazurilor în care sunt implicaţi militari. De asemenea, se mai pot înfiinţa şi instanţe specializate (dacă există un număr foarte mare de cazuri care apar într- un anumit domeniu – de exemplu, tribunal pentru minori şi familie).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Deoarece conflictele care pot să apară sunt foarte diferite, din punctul de vedere al domeniului şi al importanţei normelor încălcate, şi pentru că, uneori, pot să apară nemulţumiri sau clarificări ale unor date şi fapte după ce judecătorul a luat decizia, au fost create mai multe instanţe de judecată, pentru care s-a stabilit o ordine pe trepte. Acestea sunt: judecătoriile, tribunalele, curţile de apel şi Înalta Curte de Casaţie şi Justiţie. În afara acestor instanţe, mai există şi tribunale militare care se ocupă de soluţionarea cazurilor în care sunt implicaţi militari. De asemenea, se mai pot înfiinţa şi instanţe specializate (dacă există un număr foarte mare de cazuri care apar într-un anumit domeniu – de exemplu, tribunal pentru minori şi familie)."
   },
   {
     "id": "pdf01_t027_q04",
@@ -1941,7 +1959,8 @@
     "page": 25,
     "question": "Care sunt principalele atribuţii ale Consiliului Superior al Magistraturii?",
     "source_answer": "Principalele atribuţii ale Consiliului Superior al Magistraturii sunt următoarele:  propune Preşedintelui României numirea în funcţie a judecătorilor şi procurorilor;  judecă toate cazurile în care judecătorii şi procurorii răspund disciplinar (adică atunci când aceştia au făcut fapte care încalcă regulile de conduită pe care trebuie să le respecte magistraţii). În acest caz, hotărârile Consiliului Superior al Magistraturii pot fi atacate (contestate) la Înalta Curte de Casaţie şi Justiţie.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Principalele atribuţii ale Consiliului Superior al Magistraturii sunt următoarele:\n• propune Preşedintelui României numirea în funcţie a judecătorilor şi procurorilor;\n• judecă toate cazurile în care judecătorii şi procurorii răspund disciplinar (adică atunci când aceştia au făcut fapte care încalcă regulile de conduită pe care trebuie să le respecte magistraţii). În acest caz, hotărârile Consiliului Superior al Magistraturii pot fi atacate (contestate) la Înalta Curte de Casaţie şi Justiţie."
   },
   {
     "id": "pdf01_t028_q01",
@@ -1953,7 +1972,8 @@
     "page": 27,
     "question": "Care sunt strămoşii poporului român?",
     "source_answer": "Strămoşii poporului român sunt dacii şi romanii.Poporul român s-a format prin unirea dacilor și a romanilor, prin însușirea limbii latine, a obiceiurilor și a modului de viață roman. La formarea poporului român și a limbii române au contribuit și populațiile migratoare, mai ales slavii.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Strămoşii poporului român sunt dacii şi romanii. Poporul român s-a format prin unirea dacilor și a romanilor, prin însușirea limbii latine, a obiceiurilor și a modului de viață roman. La formarea poporului român și a limbii române au contribuit și populațiile migratoare, mai ales slavii."
   },
   {
     "id": "pdf01_t028_q02",
@@ -2085,7 +2105,8 @@
     "page": 28,
     "question": "Din ce categorie de limbi face parte limba română?",
     "source_answer": "Limba română este o limbă romanică, din grupul italic al familiei de limbi indo- europene, prezentând multe similarități cu limbile franceză, italiană, spaniolă, portugheză, catalană și reto-romană.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Limba română este o limbă romanică, din grupul italic al familiei de limbi indo-europene, prezentând multe similarități cu limbile franceză, italiană, spaniolă, portugheză, catalană și reto-romană."
   },
   {
     "id": "pdf01_t030_q01",
@@ -2229,7 +2250,8 @@
     "page": 29,
     "question": "Cine a fost Mircea cel Bătrân?",
     "source_answer": "Mircea cel Bătrân a fost domnitor în Țara Românească, între anii 1386-1418, care  a reuşit ca, pe perioada domniei sale, să dezvolte viaţa economică şi capacitatea de apărare a Ţării Româneşti.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Mircea cel Bătrân a fost domnitor în Țara Românească, între anii 1386-1418, care a reuşit ca, pe perioada domniei sale, să dezvolte viaţa economică şi capacitatea de apărare a Ţării Româneşti."
   },
   {
     "id": "pdf01_t032_q01",
@@ -2337,7 +2359,8 @@
     "page": 31,
     "question": "Daţi exemple de domnitori din Ţara Românească.",
     "source_answer": "În Ţara Românească cei mai importanţi domnitori au fost: Mircea cel Bătrân (1386- 1418), Vlad Ţepeş (care a avut 3 domnii: 1448; 1456-1462; 1476), Mihai Viteazul (1593-1601), Constantin Brâncoveanu (1688-1714).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "În Ţara Românească cei mai importanţi domnitori au fost: Mircea cel Bătrân (1386-1418), Vlad Ţepeş (care a avut 3 domnii: 1448; 1456-1462; 1476), Mihai Viteazul (1593-1601), Constantin Brâncoveanu (1688-1714)."
   },
   {
     "id": "pdf01_t033_q04",
@@ -2349,7 +2372,8 @@
     "page": 31,
     "question": "Daţi exemple de domnitori din Moldova.",
     "source_answer": "În Moldova cei mai importanţi domnitori au fost: Alexandru cel Bun (1400-1432), Ştefan cel Mare (1457-1504), Petru Rareş  ( care a avut 2 domnii: prima, între 1527 şi 1538, iar cea de-a doua, între 1541 şi 1546) şi Dimitrie Cantemir (1710-1711).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "În Moldova cei mai importanţi domnitori au fost: Alexandru cel Bun (1400-1432), Ştefan cel Mare (1457-1504), Petru Rareş (care a avut 2 domnii: prima, între 1527 şi 1538, iar cea de-a doua, între 1541 şi 1546) şi Dimitrie Cantemir (1710-1711)."
   },
   {
     "id": "pdf01_t033_q05",
@@ -2385,7 +2409,8 @@
     "page": 32,
     "question": "Daţi 2 exemple de revoluţii ce au avut loc Ţările Române.",
     "source_answer": "o Revoluţia din anul 1821, condusă de Tudor Vladimirescu, a avut cauze naționale, economice și sociale. La acea vreme, ţările române erau conduse de către conducători fanarioţi, domnitori de origine greacă impuşi de către Imperiul Otoman. Programul revoluției urmărea instaurarea unei vieți politice și administrative românești, reforma justiției, dezvoltarea educației, rezolvarea problemelor fiscale etc. Deşi a fost înfrântă, în urma revoluţiei, Imperiul Otoman a pus capăt domniilor fanariote. Revoluţia din anul 1848, numită şi revoluţia paşoptistă, a izbucnit pe fondul marilor transformări economice şi  sociale din Europa. Revoluționarii români cereau libertate și egalitate în drepturi, libertatea cuvântului etc. Deşi a fost oprită, iar conducătorii revoluţiei au fost obligaţi să părăsească ţara, Revoluţia de la 1848 a contribuit la formarea statului naţional independent unitar român.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "o Revoluţia din anul 1821, condusă de Tudor Vladimirescu, a avut cauze naționale, economice și sociale. La acea vreme, ţările române erau conduse de către conducători fanarioţi, domnitori de origine greacă impuşi de către Imperiul Otoman. Programul revoluției urmărea instaurarea unei vieți politice și administrative românești, reforma justiției, dezvoltarea educației, rezolvarea problemelor fiscale etc. Deşi a fost înfrântă, în urma revoluţiei, Imperiul Otoman a pus capăt domniilor fanariote. Revoluţia din anul 1848, numită şi revoluţia paşoptistă, a izbucnit pe fondul marilor transformări economice şi sociale din Europa. Revoluționarii români cereau libertate și egalitate în drepturi, libertatea cuvântului etc. Deşi a fost oprită, iar conducătorii revoluţiei au fost obligaţi să părăsească ţara, Revoluţia de la 1848 a contribuit la formarea statului naţional independent unitar român."
   },
   {
     "id": "pdf01_t034_q02",
@@ -2421,7 +2446,8 @@
     "page": 33,
     "question": "Cine a fost Alexandru Ioan Cuza?",
     "source_answer": "Alexandru Ioan Cuza a fost primul domnitor al Principatelor Unite și al statului național România. A participat activ la mișcarea revoluționară de la 1848 din Moldova și la lupta pentru unirea Principatelor.Cuza a fost obligat să abdice în anul 1866 de către o largă coaliție a partidelor vremii, denumită și Monstruoasa Coaliție.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Alexandru Ioan Cuza a fost primul domnitor al Principatelor Unite și al statului național România. A participat activ la mișcarea revoluționară de la 1848 din Moldova și la lupta pentru unirea Principatelor. Cuza a fost obligat să abdice în anul 1866 de către o largă coaliție a partidelor vremii, denumită și Monstruoasa Coaliție."
   },
   {
     "id": "pdf01_t034_q05",
@@ -2445,7 +2471,8 @@
     "page": 33,
     "question": "Când a fost adoptată prima Constituţie a României?",
     "source_answer": "Prima Constituţie a României a fost adoptată în anul 1866,în timpul domniei principelui Carol de Hohenzollern (regele Carol I), care i-a succedat la conducerea ţării lui Alexandru Ioan Cuza. Prima Constituţie a României a avut ca model Legea fundamentală a Belgiei.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Prima Constituţie a României a fost adoptată în anul 1866, în timpul domniei principelui Carol de Hohenzollern (regele Carol I), care i-a succedat la conducerea ţării lui Alexandru Ioan Cuza. Prima Constituţie a României a avut ca model Legea fundamentală a Belgiei."
   },
   {
     "id": "pdf01_t035_q01",
@@ -2457,7 +2484,8 @@
     "page": 33,
     "question": "Când a fost proclamată independenţa României?",
     "source_answer": "Independenţa României a fost proclamată în anul 1877, în urma războiului de independenţă purtat împotriva Imperiului Otoman .",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Independenţa României a fost proclamată în anul 1877, în urma războiului de independenţă purtat împotriva Imperiului Otoman."
   },
   {
     "id": "pdf01_t035_q02",
@@ -2493,7 +2521,8 @@
     "page": 33,
     "question": "Daţi exemple de regi care au condus România.",
     "source_answer": "o Carol I – Rege al României în perioada 1866 – 1914; o Ferdinand I- Rege al României în perioada 1914 – 1927; o Carol al II-lea – Rege Al României în perioada 1930 – 1940; o Mihai I – Rege al României cu 2 domnii: prima domnie a avut loc în perioada 1927 – 1930, iar cea de-a doua în perioada 1940 – 1947.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "• Carol I – Rege al României în perioada 1866 – 1914;\n• Ferdinand I- Rege al României în perioada 1914 – 1927;\n• Carol al II-lea – Rege Al României în perioada 1930 – 1940;\n• Mihai I – Rege al României cu 2 domnii: prima domnie a avut loc în perioada 1927 – 1930, iar cea de-a doua în perioada 1940 – 1947."
   },
   {
     "id": "pdf01_t035_q05",
@@ -2529,7 +2558,8 @@
     "page": 34,
     "question": "Cine a fost Carol I?",
     "source_answer": "Regele Carol I de Hohenzollerna fost un principe străin, numit domnitor al României la 10 mai 1866. Carol a deţinut titlul de principe între 1866-1881 şi pe acela de rege între 1881- 1914. Pe parcursul domniei sale a fost adoptată prima Constituție a României, în anul 1866. De asemenea, a avut loc proclamarea independenţei faţă de Imperiul Otoman, în urma războiului împotriva otomanilor din anii 1877-1878 (cunoscut drept Războiul de Independenţă). Din 1881, România a devenit regat, Carol I fiind rege. În cei 48 de ani ai domniei sale (cea mai lungă domnie din istoria statelor românești), Carol I a obținut creșterea prestigiului statului român, redresarea economiei, progresul social și cultural. A construit la Sinaia, în munții Carpați, castelul Peleș, care este cel mai vizitat obiectiv turistic din România. A murit în 1914 şi a fost înmormântat la Mănăstirea Curtea de Argeş.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Regele Carol I de Hohenzollerna fost un principe străin, numit domnitor al României la 10 mai 1866. Carol a deţinut titlul de principe între 1866-1881 şi pe acela de rege între 1881-1914. Pe parcursul domniei sale a fost adoptată prima Constituție a României, în anul 1866. De asemenea, a avut loc proclamarea independenţei faţă de Imperiul Otoman, în urma războiului împotriva otomanilor din anii 1877-1878 (cunoscut drept Războiul de Independenţă). Din 1881, România a devenit regat, Carol I fiind rege. În cei 48 de ani ai domniei sale (cea mai lungă domnie din istoria statelor românești), Carol I a obținut creșterea prestigiului statului român, redresarea economiei, progresul social și cultural. A construit la Sinaia, în munții Carpați, castelul Peleș, care este cel mai vizitat obiectiv turistic din România. A murit în 1914 şi a fost înmormântat la Mănăstirea Curtea de Argeş."
   },
   {
     "id": "pdf01_t036_q02",
@@ -2541,7 +2571,8 @@
     "page": 34,
     "question": "Cine a fost Ferdinand I?",
     "source_answer": "Ferdinand I al României (1914-1927) a fost al doilea rege al României. Acesta  era nepotul de frate al lui Carol I şi a fost căsătorit cu Regina Maria. În ciuda originilor sale germane, Ferdinand I a intrat în Primul Război Mondial alături de Franţa, Anglia şi Rusia împotriva Germaniei şi a Austro-Ungariei, având ca scop eliberarea Transilvaniei. În timpul vieții sale a fost realizată unirea tuturor românilor, Ferdinand fiind încoronat rege al României Mari, la 15 octombrie 1922, în Catedrala din Alba Iulia.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Ferdinand I al României (1914-1927) a fost al doilea rege al României. Acesta era nepotul de frate al lui Carol I şi a fost căsătorit cu Regina Maria. În ciuda originilor sale germane, Ferdinand I a intrat în Primul Război Mondial alături de Franţa, Anglia şi Rusia împotriva Germaniei şi a Austro-Ungariei, având ca scop eliberarea Transilvaniei. În timpul vieții sale a fost realizată unirea tuturor românilor, Ferdinand fiind încoronat rege al României Mari, la 15 octombrie 1922, în Catedrala din Alba Iulia."
   },
   {
     "id": "pdf01_t036_q03",
@@ -2565,7 +2596,8 @@
     "page": 34,
     "question": "Cine a fost Mihai I?",
     "source_answer": "Mihai I a fost fiul lui Carol al II-lea şi ultimul rege al României. Regele Mihai a fost regele ţării în două perioade: 1927-1930 şi 1940-1947. În prima perioadă, acesta a devenit principe moştenitor după moartea lui Ferdinand I, însă ţara era condusă de o Regenţă, deoarece Mihai era minor. A doua perioadă a domnit sub dictatura mareşalului Antonescu, numit prim-ministru la plecarea lui Carol al II-lea din ţară. La 23 august 1944, Regele Mihai l-a arestat pe mareșal și a aliat România coaliției antihitleriste formate din marile puteri. Astfel, forțele germane au fost obligate să părăsească România. În perioada 1945-1946, Regele a încercat să se împotrivească impunerii comunismului în România. La 30 decembrie 1947, Petru Groza și Gheorghe Gheorghiu- Dej l-au obligat pe rege să abdice. A părăsit România pe 3 ianuarie 1948 și a revenit în țară în 1997.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Mihai I a fost fiul lui Carol al II-lea şi ultimul rege al României. Regele Mihai a fost regele ţării în două perioade: 1927-1930 şi 1940-1947. În prima perioadă, acesta a devenit principe moştenitor după moartea lui Ferdinand I, însă ţara era condusă de o Regenţă, deoarece Mihai era minor. A doua perioadă a domnit sub dictatura mareşalului Antonescu, numit prim-ministru la plecarea lui Carol al II-lea din ţară. La 23 august 1944, Regele Mihai l-a arestat pe mareșal și a aliat România coaliției antihitleriste formate din marile puteri. Astfel, forțele germane au fost obligate să părăsească România. În perioada 1945-1946, Regele a încercat să se împotrivească impunerii comunismului în România. La 30 decembrie 1947, Petru Groza și Gheorghe Gheorghiu-Dej l-au obligat pe rege să abdice. A părăsit România pe 3 ianuarie 1948 și a revenit în țară în 1997."
   },
   {
     "id": "pdf01_t036_q05",
@@ -2577,7 +2609,8 @@
     "page": 35,
     "question": "Cine a fost Mihail Kogălniceanu?",
     "source_answer": "Mihail Kogălniceanu a fost unul dintre reprezentanţii mişcării revoluţionare de la 1848. A fost un om politic de orientare liberală, avocat, istoric și publicistromân, originar din Moldova, care a devenit prim-ministru al României în 1863, după Unirea din 1859 a Principatelor în timpul domniei lui Alexandru Ioan Cuza, și mai târziu a servit ca ministru al afacerilor externe sub domnia lui Carol I.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Mihail Kogălniceanu a fost unul dintre reprezentanţii mişcării revoluţionare de la 1848. A fost un om politic de orientare liberală, avocat, istoric și publicist român, originar din Moldova, care a devenit prim-ministru al României în 1863, după Unirea din 1859 a Principatelor în timpul domniei lui Alexandru Ioan Cuza, și mai târziu a servit ca ministru al afacerilor externe sub domnia lui Carol I."
   },
   {
     "id": "pdf01_t036_q06",
@@ -2661,7 +2694,8 @@
     "page": 36,
     "question": "Daţi exemple de partide politice din timpul perioadei interbelice.",
     "source_answer": "În perioada interbelică, regimul de conducere a ţării fiind democratic, au apărut mai multe partide şi grupări politice:Partidul Naţional Liberal, Partidul Naţional Ţărănesc, Partidul Comunist (înfiinţat în anul 1921 şi trecut în ilegalitate în anul 1924), mișcarea legionară precum şi partidele minorităţilor naţionale.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "În perioada interbelică, regimul de conducere a ţării fiind democratic, au apărut mai multe partide şi grupări politice: Partidul Naţional Liberal, Partidul Naţional Ţărănesc, Partidul Comunist (înfiinţat în anul 1921 şi trecut în ilegalitate în anul 1924), mișcarea legionară precum şi partidele minorităţilor naţionale."
   },
   {
     "id": "pdf01_t038_q01",
@@ -2709,7 +2743,8 @@
     "page": 37,
     "question": "Când a avut loc Al Doilea Război Mondial ?",
     "source_answer": "Al Doilea Război Mondial a avut loc în perioada cuprinsă între 1 septembrie 1939 şi 2 septembrie 1945, opunând cele 2 mari blocuri: Axa şi Aliaţii. Puterile Axei au fost, iniţial, Germania, Italia şi Japonia, în timp ce printre Puterile Aliaţilor se aflau Anglia, Uniunea Sovietică şi Statele Unite ale Americii.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Când a avut loc Al Doilea Război Mondial?"
   },
   {
     "id": "pdf01_t038_q05",
@@ -2745,7 +2780,8 @@
     "page": 37,
     "question": "Ce este mişcarea legionară?",
     "source_answer": "Mişcarea legionară (denumită şi Legiunea Arhanghelului Mihail sau, neoficial, „Cămăşile Verzi”) a fost înfiinţată în 1927, în România interbelică, de Corneliu Zelea Codreanu, ca o organizaţie de orientare naţionalist-fascistă, cu un puternic caracter mistic-religios, anticomunist şi antisemit. În 1930, Corneliu Zelea Codreanu a înfiinţat Garda de Fier, care se dorea a fi „un gard împotriva expansiunii comunismului”. Garda de Fier era un fel de partid- umbrelă pentru racolarea altor partide în scopul prezentării la alegeri ca un front comun. Singurul partid care a aderat la acest front a fost Legiunea Arhanghelul Mihail. La 4 septembrie 1940 Legiunea s-a aliat cu Ion Antonescu, formând „Statul Național-Legionar” în al cărui guvern legionarii constituiau principala forță politică.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Mişcarea legionară (denumită şi Legiunea Arhanghelului Mihail sau, neoficial, „Cămăşile Verzi”) a fost înfiinţată în 1927, în România interbelică, de Corneliu Zelea Codreanu, ca o organizaţie de orientare naţionalist-fascistă, cu un puternic caracter mistic-religios, anticomunist şi antisemit. În 1930, Corneliu Zelea Codreanu a înfiinţat Garda de Fier, care se dorea a fi „un gard împotriva expansiunii comunismului”. Garda de Fier era un fel de partid-umbrelă pentru racolarea altor partide în scopul prezentării la alegeri ca un front comun. Singurul partid care a aderat la acest front a fost Legiunea Arhanghelul Mihail. La 4 septembrie 1940 Legiunea s-a aliat cu Ion Antonescu, formând „Statul Național-Legionar” în al cărui guvern legionarii constituiau principala forță politică."
   },
   {
     "id": "pdf01_t039_q02",
@@ -2769,7 +2805,8 @@
     "page": 38,
     "question": "Cine a fost Horia Sima?",
     "source_answer": "Horia Sima a fost un politician fascist român, președintele partidului Garda de Fier şi comandantul Mișcării Legionare, după moartea lui Corneliu Zelea Codreanu. Horia Sima a declanșat și condus rebeliunea legionară împotriva generalului Ion Antonescu și a armatei române, pentru care a fost condamnat la moarte în lipsă. În același timp cu rebeliunea, în fruntea legionarilor, Sima a inițiat și condus cel mai mare și cel mai violentpogrom împotriva evreilor din istoria Munteniei, Pogromul de la București.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Horia Sima a fost un politician fascist român, președintele partidului Garda de Fier şi comandantul Mișcării Legionare, după moartea lui Corneliu Zelea Codreanu. Horia Sima a declanșat și condus rebeliunea legionară împotriva generalului Ion Antonescu și a armatei române, pentru care a fost condamnat la moarte în lipsă. În același timp cu rebeliunea, în fruntea legionarilor, Sima a inițiat și condus cel mai mare și cel mai violent pogrom împotriva evreilor din istoria Munteniei, Pogromul de la București."
   },
   {
     "id": "pdf01_t039_q04",
@@ -2805,7 +2842,8 @@
     "page": 38,
     "question": "Cine a fost Iuliu Maniu?",
     "source_answer": "Iuliu Maniu a fost unul din cei mai importanți oameni politici dintre cele două războaie mondiale. A fost președintele Partidului Naţional Ţărănesc (în perioadele 1926-1933 și 1937- 1947) și de trei ori prim-ministru al României între 1928 și 1933. Iuliu Maniu a refuzat colaborarea cu guvernul legionar şi a fost un opozant al regimului lui Ion Antonescu. După lovitura de stat de la 23 august 1944 (prin care a fost înlăturat de la putere Ion Antonescu), s-a opus preluării puterii de către comunişti, fiind  încrezător în sprijinul marilor puteri occidentale. Iuliu Maniu a obținut, alături de Partidul Naţional Țărănesc, o victorie zdrobitoare în alegerile din 19 noiembrie 1946, rezultatele fiind eliminate însă prin falsificarea alegerilor de către comuniști. A fost arestat la 14 iulie 1947 de autoritățile comuniste și judecat pentru „înaltă trădare”, fiind condamnat la închisoare pe viaţă. Iuliu Maniu s-a stins din viață la 5 februarie 1953 la Sighet, în timp ce se afla în detenţie, cadavrul său fiind aruncat într-o groapă din Cimitirul Săracilor, de la marginea orașului Sighet.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Iuliu Maniu a fost unul din cei mai importanți oameni politici dintre cele două războaie mondiale. A fost președintele Partidului Naţional Ţărănesc (în perioadele 1926-1933 și 1937-1947) și de trei ori prim-ministru al României între 1928 și 1933. Iuliu Maniu a refuzat colaborarea cu guvernul legionar şi a fost un opozant al regimului lui Ion Antonescu. După lovitura de stat de la 23 august 1944 (prin care a fost înlăturat de la putere Ion Antonescu), s-a opus preluării puterii de către comunişti, fiind încrezător în sprijinul marilor puteri occidentale. Iuliu Maniu a obținut, alături de Partidul Naţional Țărănesc, o victorie zdrobitoare în alegerile din 19 noiembrie 1946, rezultatele fiind eliminate însă prin falsificarea alegerilor de către comuniști. A fost arestat la 14 iulie 1947 de autoritățile comuniste și judecat pentru „înaltă trădare”, fiind condamnat la închisoare pe viaţă. Iuliu Maniu s-a stins din viață la 5 februarie 1953 la Sighet, în timp ce se afla în detenţie, cadavrul său fiind aruncat într-o groapă din Cimitirul Săracilor, de la marginea orașului Sighet."
   },
   {
     "id": "pdf01_t040_q01",
@@ -2973,7 +3011,8 @@
     "page": 41,
     "question": "Cine a fost Ana Pauker?",
     "source_answer": "Ana Pauker, (1893 – 1960)a fost o militantă comunistă din România, provenind dintr-o familie de evrei români, care a avut funcţia de  vicepremier și ministru de externe al României între 1947-1952. Ea a jucat un rol important în organizarea guvernului controlat de comuniști, prezidat de Petru Groza, în anii 1945-1947. În 1947 a fost numită ministru de externe și vice-prim ministru, fiind prima femeie din lume care a deținut această funcție guvernamentală. În această calitate, a semnat, între altele, actul prin care România ceda Uniunii Sovietice Insula Șerpilor. Ana Pauker a participat activ la procesul de impunere în România a comunismului prin crimă și teroare. În plan extern, România a devenit un stat satelit al Uniunii Sovietice și a rupt sau răcit relațiile diplomatice cu statele din vestul Europei. Regimul comunist condus de Ana Pauker a încurajat emigraţia evreilor români spre Israel, guvernul român fiind printre primele din lume care au recunoscut noul stat evreiesc (în 1948). În 1952 Pauker a fost îndepărtată de către Gheorghe Gheorghiu-Dej de la putere și din partid.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Ana Pauker, (1893 – 1960) a fost o militantă comunistă din România, provenind dintr-o familie de evrei români, care a avut funcţia de vicepremier și ministru de externe al României între 1947-1952. Ea a jucat un rol important în organizarea guvernului controlat de comuniști, prezidat de Petru Groza, în anii 1945-1947. În 1947 a fost numită ministru de externe și vice-prim ministru, fiind prima femeie din lume care a deținut această funcție guvernamentală. În această calitate, a semnat, între altele, actul prin care România ceda Uniunii Sovietice Insula Șerpilor. Ana Pauker a participat activ la procesul de impunere în România a comunismului prin crimă și teroare. În plan extern, România a devenit un stat satelit al Uniunii Sovietice și a rupt sau răcit relațiile diplomatice cu statele din vestul Europei. Regimul comunist condus de Ana Pauker a încurajat emigraţia evreilor români spre Israel, guvernul român fiind printre primele din lume care au recunoscut noul stat evreiesc (în 1948). În 1952 Pauker a fost îndepărtată de către Gheorghe Gheorghiu-Dej de la putere și din partid."
   },
   {
     "id": "pdf01_t042_q03",
@@ -2997,7 +3036,8 @@
     "page": 41,
     "question": "Care au fost imnurile Românieiîn timpul perioadei comuniste?",
     "source_answer": "Odată cu instaurarea puterii comuniste în 1948, imnul României devine Zdrobite cătușe. În perioada comunistă, imnul a fost schimbat de 2 ori: în 1953 şi în 1977. În 1953, Zdrobite cătuşe este înlocuit cu Te slăvim, Românie!, noul imn conţinând versuri ce ilustrau “prietenia” dintre Uniunea Sovietică şi România. În 1977, Te slăvim, Românie! este înlocuit cu Trei culori, piesă ce are la bază un cântec patriotic cu acelaşi titlu şi cu aceeaşi muzică (compusă de Ciprian Porumbescu), dar cu versuri diferite. Trei culori va rămâne imnul României până la Revoluţia din 1989.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Care au fost imnurile României în timpul perioadei comuniste?"
   },
   {
     "id": "pdf01_t042_q05",
@@ -3021,7 +3061,8 @@
     "page": 41,
     "question": "Daţi exemple de închisori şi/sau lagăre de muncă în care au fost încarcerate elitele intelectuale, politice și religioase care prezentau un pericol pentru autoritățile comuniste.",
     "source_answer": "În perioada comunistă, elitele intelectuale, politice și religioase au fost încarcerate în închisori şi lagăre de muncă, în încercarea  regimului de a anihila orice rezistenţă anticomunistă. Astfel, un număr mare de membri ai fostelor partide politice, scriitori, preoţi etc. şi-au pierdut viaţa în închisorile şi lagărele comuniste, ca urmare a torturilor şi tratamentelor inumane la care au fost supuşi. Printre cele mai cunoscute astfel de închisori şi lagăre sunt: penitenciarul Sighet (situat în Sighetul Marmaţiei, judeţul Maramureş), penitenciarul de la Aiud (judeţul Alba), penitenciarul de la Piteşti (renumit pentru aşa-zisele încercări de reeducare a deţinuţilor politici – numite generic “Experimentul Piteşti” - prin  administrarea unor bătăi și torturi brutale), lagărul de muncă de la Canal (pentru construirea Canalului Dunăre - Marea Neagră).",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "În perioada comunistă, elitele intelectuale, politice și religioase au fost încarcerate în închisori şi lagăre de muncă, în încercarea regimului de a anihila orice rezistenţă anticomunistă. Astfel, un număr mare de membri ai fostelor partide politice, scriitori, preoţi etc. şi-au pierdut viaţa în închisorile şi lagărele comuniste, ca urmare a torturilor şi tratamentelor inumane la care au fost supuşi. Printre cele mai cunoscute astfel de închisori şi lagăre sunt: penitenciarul Sighet (situat în Sighetul Marmaţiei, judeţul Maramureş), penitenciarul de la Aiud (judeţul Alba), penitenciarul de la Piteşti (renumit pentru aşa-zisele încercări de reeducare a deţinuţilor politici – numite generic “Experimentul Piteşti” - prin administrarea unor bătăi și torturi brutale), lagărul de muncă de la Canal (pentru construirea Canalului Dunăre - Marea Neagră)."
   },
   {
     "id": "pdf01_t043_q01",
@@ -3177,7 +3218,8 @@
     "page": 44,
     "question": "Ce este Frontul Salvării Naţionale (FSN)?",
     "source_answer": "Frontul Salvării Naționale (FSN) a fost o formațiune politică, înregistrată în registrul partidelor politice în februarie 1990, ca urmare a transformării în partid politic a Consiliului Frontului Salvării Naționale, organ provizoriu al puterii de stat rezultat după revoluția română din 1989, al cărui președinte a fost Ion Iliescu. Membrii frontului au fost în marea majoritate intelectuali, studenți, ofițeri de armată, dar liderii au fost aproape toți foste oficialități comuniste. La alegerile 1990 partidul a obținut 66,31% din voturile pentru Camera Deputaților, iar candidatul partidului la președinție, Ion Iliescu, a fost ales ca Președinte al României. În 1992, FSN s-a scindat în două partide: unul condus de Ion Iliescu numit Frontul Democrat al Salvării Naționale(FDSN) – actualul  Partid Social Democrat (PSD) - și celălalt Frontul Salvării Naționale (FSN), condus de Petre Roman. În 1993, FSN şi-a schimbat numele în Partidul Democrat.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Frontul Salvării Naționale (FSN) a fost o formațiune politică, înregistrată în registrul partidelor politice în februarie 1990, ca urmare a transformării în partid politic a Consiliului Frontului Salvării Naționale, organ provizoriu al puterii de stat rezultat după revoluția română din 1989, al cărui președinte a fost Ion Iliescu. Membrii frontului au fost în marea majoritate intelectuali, studenți, ofițeri de armată, dar liderii au fost aproape toți foste oficialități comuniste. La alegerile 1990 partidul a obținut 66,31% din voturile pentru Camera Deputaților, iar candidatul partidului la președinție, Ion Iliescu, a fost ales ca Președinte al României. În 1992, FSN s-a scindat în două partide: unul condus de Ion Iliescu numit Frontul Democrat al Salvării Naționale (FDSN) – actualul Partid Social Democrat (PSD) - și celălalt Frontul Salvării Naționale (FSN), condus de Petre Roman. În 1993, FSN şi-a schimbat numele în Partidul Democrat."
   },
   {
     "id": "pdf01_t045_q02",
@@ -3201,7 +3243,8 @@
     "page": 44,
     "question": "Cine a fost primul premier al României după Revoluţia din 1989?",
     "source_answer": "Primul premier al României după Revoluţia din 1989 a fost Petre Roman, un profesor universitar, o figură a Revoluției care, la vremea respectivă, nu avea un trecut politic. Acesta  a iniţiat câteva reforme pentru piața liberă. În urma mineriadei din septembrie 1991, Petre Roman a demisionat din funcţia de prim-ministru.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Primul premier al României după Revoluţia din 1989 a fost Petre Roman, un profesor universitar, o figură a Revoluției care, la vremea respectivă, nu avea un trecut politic. Acesta a iniţiat câteva reforme pentru piața liberă. În urma mineriadei din septembrie 1991, Petre Roman a demisionat din funcţia de prim-ministru."
   },
   {
     "id": "pdf01_t045_q04",
@@ -3273,7 +3316,8 @@
     "page": 45,
     "question": "Care este suprafaţa României?",
     "source_answer": "Suprafaţa României este de 238.391 kmpătraţi.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Suprafaţa României este de 238.391 km pătraţi."
   },
   {
     "id": "pdf01_t046_q04",
@@ -3297,7 +3341,8 @@
     "page": 45,
     "question": "Care sunt elementele naturale de importanţă europeană ce definesc România?",
     "source_answer": "Elementele naturale de importanţă europeană ce definesc România sunt: Munţii Carpaţi,  Fluviul Dunărea, Delta Dunării și Marea Neagră.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Elementele naturale de importanţă europeană ce definesc România sunt: Munţii Carpaţi, Fluviul Dunărea, Delta Dunării și Marea Neagră."
   },
   {
     "id": "pdf01_t046_q06",
@@ -3345,7 +3390,8 @@
     "page": 45,
     "question": "Care este cel mai înalt vârf din România?",
     "source_answer": "Cel mai înalt vârf  din România este vârful Moldoveanu din Munţii Făgăraş, care are 2544 metri.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Cel mai înalt vârf din România este vârful Moldoveanu din Munţii Făgăraş, care are 2544 metri."
   },
   {
     "id": "pdf01_t047_q04",
@@ -3369,7 +3415,8 @@
     "page": 46,
     "question": "Dați exemple de animale care trăiesc în  Munții Carpați.",
     "source_answer": "În Munţii Carpaţi trăiesc: lupul, ursul, râsul (linxul), pisica sălbatică, cerbul, mistreţul, vulpea, capra neagră (animal aflat pe cale de dispariţie), veveriţa etc.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Dați exemple de animale care trăiesc în Munții Carpați."
   },
   {
     "id": "pdf01_t047_q06",
@@ -3525,7 +3572,8 @@
     "page": 47,
     "question": "Unde este situată Marea Neagră?",
     "source_answer": "Marea Neagrăeste situată în sud-estul țării și are o suprafaţă aproximativde două ori mai mare decât cea a României.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Marea Neagră este situată în sud-estul țării și are o suprafaţă aproximativ de două ori mai mare decât cea a României."
   },
   {
     "id": "pdf01_t050_q01",
@@ -3753,7 +3801,8 @@
     "page": 49,
     "question": "Cum este fauna în România?",
     "source_answer": "Fauna sau totalitatea animalelor sălbatice cuprinde atât animale mici care trăiesc în zonele de stepă,  cât şi animale mari, specifice pădurilor. În România găsim: ierbivore (căprioara, cerbul), rozătoare (iepuri), carnivore (vulpea, lupul, ursul, râsul, pisica sălbatică etc.), păsări (vulturul, șoimul, uliul, barza, rândunica, prepelița, potârnichea), șerpi (vipera), broaște, insecte.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Fauna sau totalitatea animalelor sălbatice cuprinde atât animale mici care trăiesc în zonele de stepă, cât şi animale mari, specifice pădurilor. În România găsim: ierbivore (căprioara, cerbul), rozătoare (iepuri), carnivore (vulpea, lupul, ursul, râsul, pisica sălbatică etc.), păsări (vulturul, șoimul, uliul, barza, rândunica, prepelița, potârnichea), șerpi (vipera), broaște, insecte."
   },
   {
     "id": "pdf01_t053_q02",
@@ -3897,7 +3946,8 @@
     "page": 50,
     "question": "Cum este organizată România din punct de vedere administrativ?",
     "source_answer": "Din punct de vedere administrativ, România este organizată în unităţi administrativ – teritoriale. Acestea sunt:judeţele, oraşele, comunele şi satele.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Din punct de vedere administrativ, România este organizată în unităţi administrativ – teritoriale. Acestea sunt: judeţele, oraşele, comunele şi satele."
   },
   {
     "id": "pdf01_t055_q02",
@@ -3933,7 +3983,8 @@
     "page": 50,
     "question": "Care este județul cu cea mai densă populație din țară (cel mai populat)?",
     "source_answer": "Cel mai populat judeţ din România este judeţulIlfov, care are230 de locuitori pe kilometrul pătrat.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Cel mai populat judeţ din România este judeţul Ilfov, care are 230 de locuitori pe kilometrul pătrat."
   },
   {
     "id": "pdf01_t055_q05",
@@ -4125,7 +4176,9 @@
     "page": 53,
     "question": "Dați exemple de poezii  scrise de Mihai Eminescu.",
     "source_answer": "Cele mai cunoscute poezii scrise de Mihai Eminescu sunt: Luceafărul; Scrisoarea a III- a; La steaua; Mai am un singur dor; Ce-ti doresc eu ție, dulce Românie.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_question": "Dați exemple de poezii scrise de Mihai Eminescu.",
+    "display_source_answer": "Cele mai cunoscute poezii scrise de Mihai Eminescu sunt: Luceafărul; Scrisoarea a III-a; La steaua; Mai am un singur dor; Ce-ti doresc eu ție, dulce Românie."
   },
   {
     "id": "pdf01_t058_q03",
@@ -4557,7 +4610,8 @@
     "page": 57,
     "question": "Daţi exemple de dramaturgi români.",
     "source_answer": "Ion Luca Caragiale – cel mai mare dramaturg român - piesele sale cele mai celebre (D- ale carnavalului, O noapte furtunoasă și O scrisoare pierdută) sunt inspirate din realitatea socială a timpului. Vasile Alecsandri - cunoscut pentru comediile sale din seria ”Chirițelor” (Chirița în Iași, Chirița în provinție, Chirița în voiagiu, Chirița în balon). Eugen Ionesco (cunoscut pentru opere precum Cântăreaţa cheală, Setea şi foamea)",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Ion Luca Caragiale – cel mai mare dramaturg român - piesele sale cele mai celebre (D-ale carnavalului, O noapte furtunoasă și O scrisoare pierdută) sunt inspirate din realitatea socială a timpului. Vasile Alecsandri - cunoscut pentru comediile sale din seria ”Chirițelor” (Chirița în Iași, Chirița în provinție, Chirița în voiagiu, Chirița în balon). Eugen Ionesco (cunoscut pentru opere precum Cântăreaţa cheală, Setea şi foamea)"
   },
   {
     "id": "pdf01_t064_q03",
@@ -4605,7 +4659,8 @@
     "page": 57,
     "question": "Unde şi când au apărut primele tipografii româneşti?",
     "source_answer": "Pe teritoriul actual al României, primele tipografii româneşti au început să funcționeze în anul 1508, anul editării la Mănăstirea Dealu (din aproprierea oraşului Târgovişte) a unui Liturghier, la inițiativa voievodului Radu cel Mare (1495-1508).Tipograful acestui Liturgher a fost călugărul Macarie.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Pe teritoriul actual al României, primele tipografii româneşti au început să funcționeze în anul 1508, anul editării la Mănăstirea Dealu (din aproprierea oraşului Târgovişte) a unui Liturghier, la inițiativa voievodului Radu cel Mare (1495-1508). Tipograful acestui Liturgher a fost călugărul Macarie."
   },
   {
     "id": "pdf01_t065_q01",
@@ -4641,7 +4696,8 @@
     "page": 62,
     "question": "Care sunt drepturile și libertățile unui cetățean european?",
     "source_answer": "Cetăţeanul european are următoarele drepturi:demnitate umană, dreptul la viaţă, dreptul la integritatea persoanei, dreptul la propria persoană – interzicerea sclaviei, dreptul la libertate şi securitate, respectul pentru viaţa privată şi viaţa de familie, protecţia datelor personale, dreptul la căsătorie şi întemeierea unei familii, dreptul la gândire, conştiinţă şi religie, libertatea de expresie şi informare, libertatea de asociere, libertatea artelor şi ştiinţelor, dreptul la educaţie, dreptul de a alege ocupaţia şi dreptul de a munci, libertatea de a avea o afacere, dreptul de proprietate, dreptul de azil etc.",
-    "review_status": "pending"
+    "review_status": "pending",
+    "display_source_answer": "Cetăţeanul european are următoarele drepturi: demnitate umană, dreptul la viaţă, dreptul la integritatea persoanei, dreptul la propria persoană – interzicerea sclaviei, dreptul la libertate şi securitate, respectul pentru viaţa privată şi viaţa de familie, protecţia datelor personale, dreptul la căsătorie şi întemeierea unei familii, dreptul la gândire, conştiinţă şi religie, libertatea de expresie şi informare, libertatea de asociere, libertatea artelor şi ştiinţelor, dreptul la educaţie, dreptul de a alege ocupaţia şi dreptul de a munci, libertatea de a avea o afacere, dreptul de proprietate, dreptul de azil etc."
   },
   {
     "id": "pdf01_t065_q04",
