@@ -1,0 +1,25 @@
+.question-breadcrumbs { margin-top: 1.25rem; font-size: .875rem; }
+.question-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.question-breadcrumbs li { display: flex; gap: .65rem; align-items: baseline; }
+.question-breadcrumbs li + li::before { content: "›" / ""; color: #53627c; }
+
+.communication .dictionary-row { align-items: start; }
+.communication-original strong { display: block; }
+.communication .dictionary-row :is(strong, p) { overflow-wrap: anywhere; }
+.communication .dictionary-row > button { justify-self: end; }
+.communication .dictionary-audio-error { grid-column: 1 / -1; max-width: none; }
+
+@media (max-width: 640px) {
+  .communication .dictionary-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .communication-original { display: contents; }
+  .communication .dictionary-row > p { grid-area: 2 / 1; }
+  .communication .dictionary-sources { grid-area: 3 / 1; }
+  .communication .dictionary-row > button { grid-area: 1 / 2 / 3; align-self: center; }
+}

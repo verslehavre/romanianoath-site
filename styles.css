@@ -106,13 +106,14 @@
 #chapter-list>li>button[aria-expanded=true]{background:#edf2fc;border-color:#9eafd2}
 #block-list>li>button{position:relative}
 .block-complete{position:absolute;top:1px;right:5px;color:#287348;font-size:13px;font-weight:800;line-height:1.2}
+#card > .study-question-label{font-size:12px;font-weight:700;color:#61718e;letter-spacing:normal}
 .stage-label{min-width:0;display:grid;gap:4px}
 .stage-progress{display:grid;font-size:12px;font-weight:400;color:#61718e;white-space:normal}
 .stage-progress small{font-size:11px}
 #block-progress{font-size:14px;color:#526693}
 #stages-screen #stages-chapter{margin:4px 0}
 #stages-screen #stages-title{margin:0 0 8px}
-#stages-screen #stage-block-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;max-width:760px}
+#stages-screen #stage-block-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;max-width:760px;margin-block-end:8px}
 #stages-screen #stage-block-info p{margin-block:0}
 #stages-screen #block-progress{margin-inline-start:auto;text-align:end}
 #stages-screen #block-question-return{padding:6px 0;margin-top:8px;font-size:14px;color:#526693}

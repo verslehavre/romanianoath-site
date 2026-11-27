@@ -205,6 +205,8 @@ function renderDirectionNav(activeId) {
 function renderDirection(direction) {
   renderDirectionNav(direction.id);
   byId('direction-title').textContent = direction.title;
+  const reference = document.querySelector('[data-communication-reference]');
+  if (reference) reference.hidden = direction.id !== 'communication';
   const list = byId('direction-sections');
   list.replaceChildren();
   function appendSection(section, target) {
@@ -1713,7 +1715,11 @@ function renderCard(moveFocus = false) {
   delete questionSpeaker.dataset.listened;
   byId('question-play-label').hidden = !listening;
   byId('listening-answer-heading').hidden = !listening;
-  document.querySelector('#card > .language-label').hidden = listening;
+  const questionLabel = document.querySelector('#card > .language-label');
+  const isStudy = mode === 'study';
+  questionLabel.classList.toggle('study-question-label', isStudy);
+  questionLabel.textContent = isStudy ? 'Вопрос · Română' : 'ВОПРОС · ROMÂNĂ';
+  questionLabel.hidden = listening;
   byId('listening-controls').hidden = !listening;
   byId('listening-text-fallback').hidden = true;
   if (mode === 'listening') {
