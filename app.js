@@ -1955,7 +1955,12 @@ async function initialize() {
     if (!byId('chapters-screen').hidden) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     byId('load-status').hidden = true;
   } catch (error) {
-    byId('load-status').textContent = `Не удалось открыть карточки. ${error.message} Запустите локальный HTTP-сервер из корня проекта и откройте /web/.`;
+    console.error('Не удалось загрузить учебные материалы.', error);
+    const localMode = location.protocol === 'file:'
+      || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+    byId('load-status').textContent = localMode
+      ? `Не удалось открыть карточки. ${error.message} Запустите локальный HTTP-сервер из корня проекта и откройте /web/.`
+      : 'Не удалось загрузить учебные материалы. Попробуйте обновить страницу.';
   }
 }
 initialize();
